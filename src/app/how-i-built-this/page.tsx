@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "How I Built This — Mark Feldman",
@@ -11,12 +12,12 @@ export default function HowIBuiltThis() {
     <div className="flex flex-1 flex-col bg-zinc-50 font-sans dark:bg-black">
       <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-16 px-6 py-24 sm:px-8">
         <div className="flex flex-col gap-4">
-          <a
+          <Link
             href="/"
             className="w-fit text-sm font-medium text-zinc-500 transition-colors hover:text-black dark:text-zinc-400 dark:hover:text-zinc-50"
           >
             ← Back
-          </a>
+          </Link>
           <h1 className="text-3xl font-semibold tracking-tight text-black sm:text-4xl dark:text-zinc-50">
             How I built this
           </h1>
