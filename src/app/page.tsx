@@ -1,3 +1,5 @@
+import LiveRepoActivity from "@/components/LiveRepoActivity";
+
 const skills = [
   {
     title: "Leading teams through platform change",
@@ -61,6 +63,26 @@ export default function Home() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="flex flex-col gap-4 border-t border-zinc-200 pt-8 dark:border-zinc-800">
+          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
+            This site is the work sample
+          </h2>
+          <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            I built this with Claude Code rather than a template — real
+            architecture tradeoffs, real deployment friction, and real
+            decisions about what to hand to an agent versus keep
+            human-controlled. That process is more representative of
+            adopting agentic AI on a team than a chatbot widget would be.
+          </p>
+          <LiveRepoActivity />
+          <a
+            href="/how-i-built-this"
+            className="w-fit text-base font-medium text-black underline decoration-zinc-400 underline-offset-4 transition-colors hover:decoration-black dark:text-zinc-50 dark:decoration-zinc-600 dark:hover:decoration-zinc-50"
+          >
+            How I built this →
+          </a>
         </section>
 
         <section className="flex flex-col gap-4 border-t border-zinc-200 pt-8 dark:border-zinc-800">
