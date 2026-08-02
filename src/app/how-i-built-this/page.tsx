@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "How I Built This — Mark Feldman",
@@ -9,16 +10,16 @@ export const metadata: Metadata = {
 
 export default function HowIBuiltThis() {
   return (
-    <div className="flex flex-1 flex-col bg-zinc-50 font-sans dark:bg-black">
+    <div className="flex flex-1 flex-col font-sans">
       <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-16 px-6 py-24 sm:px-8">
-        <div className="flex flex-col gap-4">
+        <Reveal className="flex flex-col gap-4">
           <Link
             href="/"
-            className="w-fit text-sm font-medium text-zinc-500 transition-colors hover:text-black dark:text-zinc-400 dark:hover:text-zinc-50"
+            className="w-fit text-sm font-medium text-zinc-500 transition-colors hover:text-[#2a78d6] dark:text-zinc-400 dark:hover:text-[#6fa8e8]"
           >
             ← Back
           </Link>
-          <h1 className="text-3xl font-semibold tracking-tight text-black sm:text-4xl dark:text-zinc-50">
+          <h1 className="bg-gradient-to-br from-[#2a78d6] via-black to-black bg-clip-text text-3xl font-semibold tracking-tighter text-transparent sm:text-4xl dark:from-[#3987e5] dark:via-white dark:to-white">
             How I built this
           </h1>
           <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
@@ -27,9 +28,9 @@ export default function HowIBuiltThis() {
             agentic-AI skill than anything I could write on a résumé, so
             here&apos;s what actually happened.
           </p>
-        </div>
+        </Reveal>
 
-        <section className="flex flex-col gap-4">
+        <Reveal className="flex flex-col gap-4">
           <h2 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
             Real tradeoffs, not defaults
           </h2>
@@ -43,9 +44,9 @@ export default function HowIBuiltThis() {
             recommendation plus the reasoning behind it, mine to accept,
             reject, or push back on.
           </p>
-        </section>
+        </Reveal>
 
-        <section className="flex flex-col gap-4">
+        <Reveal className="flex flex-col gap-4">
           <h2 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
             When the plan met reality
           </h2>
@@ -58,19 +59,19 @@ export default function HowIBuiltThis() {
             clearly, we stopped, looked at the actual fields in front of me
             (a build command and a deploy command), and worked backward to
             what Cloudflare was really asking for: a{" "}
-            <code className="rounded bg-zinc-200 px-1.5 py-0.5 text-sm dark:bg-zinc-800">
+            <code className="rounded bg-[#2a78d6]/10 px-1.5 py-0.5 text-sm text-[#1c5cab] dark:bg-[#2a78d6]/15 dark:text-[#86b6ef]">
               wrangler.jsonc
             </code>{" "}
             declaring the Next.js static export as the assets directory for{" "}
-            <code className="rounded bg-zinc-200 px-1.5 py-0.5 text-sm dark:bg-zinc-800">
+            <code className="rounded bg-[#2a78d6]/10 px-1.5 py-0.5 text-sm text-[#1c5cab] dark:bg-[#2a78d6]/15 dark:text-[#86b6ef]">
               wrangler deploy
             </code>{" "}
             to serve. We verified it locally with a dry run before pushing
             anything.
           </p>
-        </section>
+        </Reveal>
 
-        <section className="flex flex-col gap-4">
+        <Reveal className="flex flex-col gap-4">
           <h2 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
             Where the agent stopped and I didn&apos;t
           </h2>
@@ -86,9 +87,9 @@ export default function HowIBuiltThis() {
             exactly the kind of step that should require a person, not get
             automated past.
           </p>
-        </section>
+        </Reveal>
 
-        <section className="flex flex-col gap-4 border-t border-zinc-200 pt-8 dark:border-zinc-800">
+        <Reveal className="flex flex-col gap-4 border-t border-zinc-200 pt-8 dark:border-zinc-800">
           <h2 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
             Why this matters for a team adopting agentic AI
           </h2>
@@ -100,7 +101,7 @@ export default function HowIBuiltThis() {
             should do unsupervised versus what stays with a person. Not a
             slick demo — a working process a team can actually run with.
           </p>
-        </section>
+        </Reveal>
       </main>
     </div>
   );

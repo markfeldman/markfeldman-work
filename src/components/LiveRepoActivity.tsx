@@ -56,7 +56,7 @@ export default function LiveRepoActivity() {
   }, []);
 
   return (
-    <div className="flex flex-col gap-4 rounded-2xl border border-zinc-200 bg-white p-6 dark:border-zinc-800 dark:bg-zinc-950">
+    <div className="flex flex-col gap-4 rounded-2xl border border-black/5 bg-white/60 p-6 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#2a78d6]/10 dark:border-white/10 dark:bg-white/5">
       <div className="flex items-center gap-2">
         <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0ca30c] opacity-75" />
