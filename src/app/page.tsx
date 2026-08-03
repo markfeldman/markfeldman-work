@@ -153,6 +153,21 @@ export default function Home() {
             hard calls, and bounded operational agents execute only what was
             actually approved.
           </p>
+          <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            The implementation is still private, but the design documentation
+            is public — the architecture decisions, the phased plan with each
+            gate&apos;s honest status, the risk register including what&apos;s
+            still open, and every normative requirement mapped to a test.
+            You don&apos;t have to take any of the below on faith.
+          </p>
+          <a
+            href="https://github.com/markfeldman/atlas-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit rounded-full border border-[#2a78d6]/40 bg-[#2a78d6]/10 px-5 py-2.5 text-base font-medium text-[#1c5cab] transition-all hover:-translate-y-0.5 hover:border-[#2a78d6] hover:shadow-lg hover:shadow-[#2a78d6]/15 dark:text-[#86b6ef]"
+          >
+            Read the design docs on GitHub →
+          </a>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
               <h3 className="font-medium text-black dark:text-zinc-50">
