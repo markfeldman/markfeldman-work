@@ -12,10 +12,27 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Mark Feldman — Agentic Systems Engineer";
+const description =
+  "Senior software development manager moving into agentic AI systems engineering — helping teams evaluate, adopt, and build with agentic AI.";
+
 export const metadata: Metadata = {
-  title: "Mark Feldman — Agentic Systems Engineer",
-  description:
-    "Mark Feldman, senior software development manager moving into agentic AI systems engineering — helping teams evaluate, adopt, and build with agentic AI.",
+  metadataBase: new URL("https://markfeldman.work"),
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: "https://markfeldman.work",
+    siteName: "Mark Feldman",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({
