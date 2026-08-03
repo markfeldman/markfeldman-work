@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 const title = "Mark Feldman — Agentic Systems Engineer";
 const description =
-  "Engineering leader — 15+ years in C#/.NET, 12+ leading teams. Track record of installing durable engineering practice where none existed. Looking to help a team adopt agentic AI.";
+  "I build systems where AI agents do real engineering work under real constraints — multi-agent orchestration, authorization boundaries, and the review discipline that makes agent output safe to merge. 12+ years leading engineering teams behind it.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://markfeldman.work"),
