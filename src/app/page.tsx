@@ -197,10 +197,10 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
               <h3 className="font-medium text-black dark:text-zinc-50">
-                306 passing tests, and one honest gap
+                761 passing tests, and one honest gap
               </h3>
               <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                Four phases built and reviewed. A platform dependency blocks
+                Eight phases built and reviewed. A platform dependency blocks
                 real end-to-end dispatch verification on Windows, so that
                 gate is documented as partially met with the reason — not
                 rounded up to green. A governance system that overstates its
