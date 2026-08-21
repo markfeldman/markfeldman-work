@@ -2,7 +2,8 @@
 """Publish the private v2 repository's generated project documents on this site.
 
 The Cloudflare build only checks out markfeldman-work, so these generated files are
-committed here. Run this script after the v2 roadmap or contract set changes.
+committed here. The v2 publish workflow runs this script after relevant changes;
+it can also be run locally for an immediate preview or manual refresh.
 """
 
 from __future__ import annotations
