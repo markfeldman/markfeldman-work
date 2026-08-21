@@ -3,6 +3,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import {
   prose,
+  thousands,
   roadmap,
   type Gate,
   type KickoffItem,
@@ -18,8 +19,8 @@ export const metadata: Metadata = {
 const { derived, kickoff, v1Snapshot, implementationOrder } = roadmap;
 
 const tallies = [
-  { label: "Contracts", value: derived.totals.contracts.toLocaleString() },
-  { label: "Canonical records", value: derived.totals.records.toLocaleString() },
+  { label: "Contracts", value: thousands(derived.totals.contracts) },
+  { label: "Canonical records", value: thousands(derived.totals.records) },
   {
     label: "Kickoff items done",
     value: `${derived.kickoffDone} of ${derived.kickoffTotal}`,
@@ -190,7 +191,7 @@ export default function PerimeterCerberus() {
           </h2>
           <p className="max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
             {derived.totals.contracts} contracts and{" "}
-            {derived.totals.records.toLocaleString()} canonical records, entered
+            {thousands(derived.totals.records)} canonical records, entered
             through a consolidated authority index that defines reading order
             and supersession rules. Underneath it sits a per-contract register:
             the scope each one declares, the rule IDs it defines, who cites it,

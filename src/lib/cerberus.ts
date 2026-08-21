@@ -104,3 +104,17 @@ export const roadmap = raw as unknown as Roadmap;
 export function prose(text: string): string {
   return text.replace(/ -- /g, " — ");
 }
+
+/**
+ * Group thousands with a comma, deterministically.
+ *
+ * `Number.prototype.toLocaleString()` cannot be used here: it formats with the
+ * build machine's locale during static export and with the visitor's locale in
+ * the browser. A visitor whose locale groups differently ("2.078") gets markup
+ * that disagrees with the server's ("2,078"), and the hydration mismatch can
+ * take the client bundle down with it — which on this site means every Reveal
+ * stays at opacity 0 and the page renders blank.
+ */
+export function thousands(n: number): string {
+  return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
