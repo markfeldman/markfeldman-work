@@ -18,7 +18,7 @@ export type Track = {
   detail: string;
 };
 
-export type KickoffState = "done" | "blocked" | "open";
+export type KickoffState = "done" | "blocked" | "open" | "waiting";
 
 export type KickoffItem = {
   n: number;
@@ -27,6 +27,7 @@ export type KickoffItem = {
   note: string;
   date?: string;
   blockedBy?: string;
+  awaiting?: string;
 };
 
 export type Finding = {

@@ -55,6 +55,11 @@ function kickoffTreatment(item: KickoffItem): { color: string; label: string } {
         color: "#d03b3b",
         label: item.blockedBy ? `Blocked · ${item.blockedBy}` : "Blocked",
       };
+    case "waiting":
+      return {
+        color: "#fab219",
+        label: item.awaiting ? `Waiting · ${item.awaiting}` : "Waiting",
+      };
     default:
       return { color: "#fab219", label: "Open" };
   }
@@ -211,9 +216,9 @@ export default function PerimeterCerberus() {
             What stands in the way
           </h2>
           <p className="max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            The kickoff items for the second build. These come before the first
-            implementation sprint, and two of them are blocked on questions the
-            contracts do not answer.
+            The kickoff items for the second build. Four are complete; the
+            asset-package work is unblocked but unfinished, and the Design audit
+            is waiting on a reachable project.
           </p>
           <Scroller>
             <table className="w-full min-w-[46rem] border-collapse">

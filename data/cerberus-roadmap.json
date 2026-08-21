@@ -59,16 +59,15 @@
    {
     "n": 3,
     "title": "Asset packs \u2014 definition and implementation",
-    "state": "blocked",
-    "blockedBy": "HG-002",
-    "note": "Two asset-package contracts with disjoint rule namespaces and neither superseding the other. Which one governs has to be answered before a pack can be defined against either."
+    "state": "open",
+    "note": "Unblocked 2026-08-21 by AM-006: P13.1 (AP-001..060) takes authority, the unnumbered proposal is superseded and Bubble Bath is obsolete. tools/pack-theme.py already cited AP-009, so the tooling was on P13.1 all along. HG-006 remains: P13.1 still requires a Bubble Bath fixture that no longer has a subject."
    },
    {
     "n": 4,
     "title": "Author the mob damage visual",
-    "state": "blocked",
-    "blockedBy": "HG-001",
-    "note": "The decision is taken -- dimming only, no size change, no health bar. UI-249 has no damaged state to author it into, and UI-185 does not govern damage state."
+    "state": "done",
+    "date": "2026-08-21",
+    "note": "AM-007: UI-249 now carries a damaged state between hit and death, luminance only, with size, opacity and silhouette changes expressly forbidden. No magnitude authored -- depth is a theme-supplied slot fill under UI-232, and v1's 45% is not adopted."
    },
    {
     "n": 5,
@@ -80,8 +79,9 @@
    {
     "n": 6,
     "title": "Brief Claude Design on the platform authority",
-    "state": "open",
-    "note": "The target is a portrait Android phone game and the contracts always said so -- PD-11, PD-13, PD-14, PD-23. The project must be located first; DesignSync list_projects returns empty and only lists writable design-system projects."
+    "state": "waiting",
+    "awaiting": "a reachable design project",
+    "note": "Brief written 2026-08-21: Docs/design-brief-platform-authority.md, every claim cited. The audit cannot run -- DesignSync list_projects still returns empty, and it only lists writable design-system projects, so GUI work in an ordinary claude.ai Project would never appear. The owner has to say which of the three cases applies."
    }
   ]
  },
@@ -620,16 +620,16 @@
     "title": "No contract says what a damaged mob looks like",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "open; blocks the mob-damage authoring in v2 kickoff item 4",
-    "open": true
+    "status": "RESOLVED 2026-08-21 \u2014 [AM-007](../amendments/AM-007-mob-damaged-state.md)",
+    "open": false
    },
    {
     "id": "HG-002",
     "title": "Two asset-package contracts, and nothing says which one governs",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "open; blocks v2 kickoff item 3",
-    "open": true
+    "status": "RESOLVED 2026-08-21 \u2014 [AM-006](../amendments/AM-006-asset-package-authority.md)",
+    "open": false
    },
    {
     "id": "HG-003",
@@ -652,12 +652,20 @@
     "title": "A question P03 closed is still advertised as open, pointing at a model P03 forbids",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "open; a stale cross-reference, cheap to fix and actively misleading",
+    "status": "RESOLVED 2026-08-21 \u2014 [AM-008](../amendments/AM-008-pd-09-resumption-discharged.md)",
+    "open": false
+   },
+   {
+    "id": "HG-006",
+    "title": "P13.1 requires a Bubble Bath fixture that no longer has a subject",
+    "kind": "how-gap",
+    "source": "Docs/agile/contract-how-gaps.md",
+    "status": "open; created by AM-006, which deliberately left it unauthored",
     "open": true
    }
   ],
-  "openFindings": 9,
-  "kickoffDone": 3,
+  "openFindings": 7,
+  "kickoffDone": 4,
   "kickoffTotal": 6
  }
 }

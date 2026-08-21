@@ -283,11 +283,10 @@ export default function Home() {
               </h4>
               <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
                 The other sixteen are listed as pending rather than deferred
-                out of sight. The test suite is 1,569 cases; the last CI run
-                reported 1,555 passing and 14 failing on all three platforms,
-                every one of them looking for a generated file that is not
-                committed. That is a provisioning gap, and it is written down
-                as one instead of being rounded up.
+                out of sight. At the frozen v1 tag, all 1,569 tests pass; CI
+                runs the same suite on Linux, Windows, and macOS. That is the
+                baseline the second build has to preserve, not a claim that v2
+                already exists.
               </p>
             </div>
           </div>
