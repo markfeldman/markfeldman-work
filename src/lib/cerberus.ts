@@ -4,8 +4,8 @@ import raw from "../../data/cerberus-roadmap.json";
  * Typed view over the roadmap snapshot emitted by `tools/emit-roadmap.py --json`
  * in the Perimeter-Cerberus v2 repo. Regenerate rather than hand-editing the JSON.
  *
- * `links.contractOverview` in the source data points at a private artifact, so it
- * is deliberately absent from this type — nothing on a public page may link to it.
+ * The generated standalone roadmap and contract overview are published under the
+ * project route. Their historical Claude artifact links are not consumed here.
  */
 
 export type TrackState = "complete" | "frozen" | "starting";

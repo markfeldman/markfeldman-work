@@ -204,11 +204,20 @@ export default function PerimeterCerberus() {
             carrying the additions, revisions and removals that a snapshot of
             the current text would hide.
           </p>
-          <p className="max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            That register is not published. It is the complete design of an
-            unreleased game, and the counts on this page are the part of it that
-            is useful to a reader here.
-          </p>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/perimeter-cerberus/roadmap/"
+              className="rounded-full border border-[#2a78d6]/40 bg-[#2a78d6]/10 px-4 py-2 text-sm font-medium text-[#1c5cab] transition-colors hover:border-[#2a78d6] dark:text-[#86b6ef]"
+            >
+              Open the full roadmap →
+            </Link>
+            <Link
+              href="/perimeter-cerberus/contract-overview/"
+              className="rounded-full border border-black/10 bg-white/60 px-4 py-2 text-sm font-medium text-black transition-colors hover:border-[#2a78d6] dark:border-white/15 dark:bg-white/5 dark:text-zinc-50"
+            >
+              Explore all contracts →
+            </Link>
+          </div>
         </Reveal>
 
         <Reveal className="flex flex-col gap-4">

@@ -1,0 +1,513 @@
+<title>Perimeter-Cerberus — Roadmap</title>
+
+<style>
+/* ------------------------------------------------------------------
+   The parent document. Same visual system as the contract overview --
+   slate ground, teal seal, bookish serif over system sans, monospace
+   for anything countable -- because that page is a section of this one
+   and they should read as one publication.
+
+   Where the overview is operated, this is read: a table of contents
+   rail, a single measure column, and progress encoded as proportion
+   rather than as decoration. Status never rides on colour alone; every
+   state carries its word.
+   ------------------------------------------------------------------ */
+
+:root {
+  --ground:      #f4f6f7;
+  --surface:     #ffffff;
+  --surface-alt: #eceff1;
+  --ink:         #141a1d;
+  --ink-soft:    #3d4a50;
+  --muted:       #5d6b71;
+  --rule:        #dbe2e5;
+  --rule-strong: #c2cdd2;
+  --accent:      #0b6e62;
+  --accent-soft: #e2efec;
+  --track:       #dfe5e8;
+  --removed:     #9b382f;
+  --removed-bg:  #f6e6e4;
+  --ochre:       #7f5a10;
+  --ochre-bg:    #f6eeda;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, ui-serif, serif;
+  --sans:  ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  --mono:  ui-monospace, "Cascadia Mono", "SF Mono", "Segoe UI Mono", Consolas, monospace;
+  --pad: clamp(1rem, 3vw, 2.25rem);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #0e1214; --surface: #161b1e; --surface-alt: #1d2428;
+    --ink: #dfe5e7; --ink-soft: #b3bec3; --muted: #8d9ba1;
+    --rule: #262d31; --rule-strong: #384247; --track: #242c30;
+    --accent: #3aae9d; --accent-soft: #12302c;
+    --removed: #e28a80; --removed-bg: #341f1d;
+    --ochre: #d8aa4c; --ochre-bg: #302716;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0e1214; --surface: #161b1e; --surface-alt: #1d2428;
+  --ink: #dfe5e7; --ink-soft: #b3bec3; --muted: #8d9ba1;
+  --rule: #262d31; --rule-strong: #384247; --track: #242c30;
+  --accent: #3aae9d; --accent-soft: #12302c;
+  --removed: #e28a80; --removed-bg: #341f1d;
+  --ochre: #d8aa4c; --ochre-bg: #302716;
+}
+:root[data-theme="light"] {
+  --ground: #f4f6f7; --surface: #ffffff; --surface-alt: #eceff1;
+  --ink: #141a1d; --ink-soft: #3d4a50; --muted: #5d6b71;
+  --rule: #dbe2e5; --rule-strong: #c2cdd2; --track: #dfe5e8;
+  --accent: #0b6e62; --accent-soft: #e2efec;
+  --removed: #9b382f; --removed-bg: #f6e6e4;
+  --ochre: #7f5a10; --ochre-bg: #f6eeda;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px;
+}
+
+/* --- masthead ----------------------------------------------------- */
+
+.masthead { background: var(--surface); border-bottom: 1px solid var(--rule); padding: var(--pad); }
+.masthead-inner { max-width: 1120px; margin: 0 auto; }
+
+.eyebrow {
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--muted); margin: 0;
+}
+
+h1 {
+  font-family: var(--serif); font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3.1rem); line-height: 1.05;
+  letter-spacing: -0.02em; text-wrap: balance; margin: 0.4rem 0 0.5rem;
+}
+
+.subtitle { font-size: 1.05rem; color: var(--ink-soft); max-width: 56ch; margin: 0 0 1.6rem; }
+
+.tallies {
+  display: flex; flex-wrap: wrap; gap: 0 2.6rem;
+  border-top: 1px solid var(--rule); padding-top: 1rem; margin: 0;
+}
+.tally dt {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted);
+}
+.tally dd {
+  margin: 0.2rem 0 1rem;
+  font-family: var(--serif); font-size: 1.75rem; line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.tally dd small { font-size: 0.95rem; color: var(--muted); font-family: var(--sans); }
+
+/* --- layout ------------------------------------------------------- */
+
+.shell {
+  max-width: 1120px; margin: 0 auto; padding: 0 var(--pad) 5rem;
+  display: grid; grid-template-columns: 14rem minmax(0, 1fr);
+  gap: 3rem; align-items: start;
+}
+
+.toc { position: sticky; top: 1rem; padding-top: 2rem; display: flex; flex-direction: column; }
+.toc a {
+  border-left: 2px solid var(--rule); padding: 0.32rem 0 0.32rem 0.7rem;
+  font-size: 12.5px; color: var(--muted); text-decoration: none;
+}
+.toc a:hover { color: var(--ink); border-left-color: var(--rule-strong); }
+
+main { padding-top: 2rem; min-width: 0; }
+
+section { margin-bottom: 3.2rem; scroll-margin-top: 1rem; }
+h2 {
+  font-family: var(--serif); font-size: 1.45rem; font-weight: 600;
+  letter-spacing: -0.012em; margin: 0 0 0.4rem;
+  border-top: 2px solid var(--ink); padding-top: 0.75rem;
+}
+.lede { color: var(--ink-soft); max-width: 64ch; margin: 0 0 1.2rem; }
+
+/* --- tracks ------------------------------------------------------- */
+
+.tracks { display: grid; gap: 1rem; }
+.track {
+  background: var(--surface); border: 1px solid var(--rule);
+  border-left: 3px solid var(--rule-strong);
+  border-radius: 3px; padding: 1rem 1.1rem;
+}
+.track.is-complete { border-left-color: var(--accent); }
+.track.is-starting { border-left-color: var(--ochre); }
+.track h3 { font-family: var(--serif); font-size: 1.1rem; margin: 0 0 0.35rem; font-weight: 600; }
+.track p { margin: 0 0 0.5rem; font-size: 13.5px; }
+.track p:last-child { margin-bottom: 0; color: var(--muted); }
+.track .state {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--muted);
+}
+
+/* --- the sub-document link ---------------------------------------- */
+
+.child {
+  display: block; text-decoration: none; color: inherit;
+  background: var(--accent-soft); border: 1px solid var(--accent);
+  border-radius: 3px; padding: 1.1rem 1.2rem;
+}
+.child:hover { background: var(--surface); }
+.child .kicker {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent);
+}
+.child h3 { font-family: var(--serif); font-size: 1.15rem; margin: 0.3rem 0 0.3rem; font-weight: 600; }
+.child p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+.child .go { color: var(--accent); font-size: 13px; margin-top: 0.6rem; display: block; }
+
+/* --- tables ------------------------------------------------------- */
+
+.scroller { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 0.5rem 0.8rem 0.5rem 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted);
+  border-bottom-color: var(--rule-strong); white-space: nowrap;
+}
+td.num { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--mono); font-size: 12px; white-space: nowrap; }
+code, .mono { font-family: var(--mono); font-size: 11.5px; }
+
+.chip {
+  display: inline-block; font-family: var(--mono); font-size: 10.5px;
+  padding: 0.1rem 0.4rem; border: 1px solid var(--rule-strong);
+  border-radius: 2px; color: var(--muted); white-space: nowrap;
+}
+.chip.done { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.chip.blocked { background: var(--removed-bg); border-color: var(--removed); color: var(--removed); }
+.chip.openstate { background: var(--ochre-bg); border-color: var(--ochre); color: var(--ochre); }
+
+/* --- proportion meters -------------------------------------------- */
+/* One measure, one hue: built as a share of authored. The number is
+   always printed beside the bar, so the bar is never the only reading. */
+
+.meter { display: block; width: 100%; max-width: 190px; height: 8px; background: var(--track); border-radius: 4px; overflow: hidden; }
+.meter span { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+td.meter-cell { width: 200px; padding-top: 0.75rem; }
+
+/* --- gates -------------------------------------------------------- */
+
+.gate-mark { font-family: var(--mono); font-size: 11px; white-space: nowrap; }
+.gate-mark.met { color: var(--accent); }
+.gate-mark.unmet { color: var(--muted); }
+
+/* --- figure ------------------------------------------------------- */
+
+figure { margin: 1.4rem 0 0; }
+figure svg { max-width: 100%; height: auto; display: block; }
+figure svg .hi { stroke: var(--accent); }
+figure svg text.hi { fill: var(--accent); stroke: none; }
+figure svg .hifill { fill: var(--accent); stroke: none; }
+figcaption { font-size: 12.5px; color: var(--muted); margin-top: 0.7rem; max-width: 62ch; }
+
+details { margin-top: 0.6rem; }
+summary { font-size: 12.5px; color: var(--muted); cursor: pointer; width: fit-content; }
+summary:hover { color: var(--ink); }
+
+.footnote {
+  margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule);
+  font-size: 12.5px; color: var(--muted); max-width: 66ch;
+}
+
+@media (max-width: 860px) {
+  .shell { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .toc { position: static; flex-flow: row wrap; padding-top: 1.25rem; gap: 0 1rem; }
+  .toc a { border-left: 0; border-bottom: 2px solid var(--rule); padding: 0.3rem 0; }
+  td.meter-cell { width: auto; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+</style>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="eyebrow" id="eyebrow"></p>
+    <h1 id="title"></h1>
+    <p class="subtitle" id="subtitle"></p>
+    <dl class="tallies" id="tallies"></dl>
+  </div>
+</header>
+
+<div class="shell">
+  <nav class="toc" id="toc"></nav>
+  <main id="main"></main>
+</div>
+
+<script>
+const DATA = {"_comment":["Hand-authored structure for tools/emit-roadmap.py. Narrative and status live here;","every count and every list that can be derived from the repo is derived at emit time","rather than copied, so the roadmap cannot drift from the contracts or the registers.","","Rule for editing: state only what a file in this repo supports. v2 has no authored","sprint plan and this file does not invent one -- the implementation order shown is","the one contract-coverage-map.md derives from P13's required order."],"title":"Perimeter-Cerberus","subtitle":"Where the project is, what it is built on, and what remains.","updated":"2026-08-21","links":{"contractOverview":"/perimeter-cerberus/contract-overview/","contractOverviewDocs":"../contract-overview/README.md"},"tracks":[{"id":"contracts","name":"The contract set","state":"complete","line":"P00 through P14 are authored and approved. 356 contracts, 2,078 canonical records, entered through the consolidated authority index.","detail":"This is the foundation both builds share, and the only implementation authority. It is finished work: the phases that author it have all reached their exit contracts. What remains against it is not authoring but the handful of gaps the two registers name."},{"id":"v1","name":"v1 \u2014 reference implementation","state":"frozen","line":"Sprint 0 through Sprint 26, frozen at tag v1-final-demo. A runnable demo and the reference for how the contracts behave in motion.","detail":"Read-only. It proved the contract set is executable and it is where every mechanism was first exercised, but it also carries the inventions this project is trying not to repeat -- the mob damage visual in HG-001 was found there."},{"id":"v2","name":"v2 \u2014 the second build","state":"starting","line":"Starts from the contracts, not from v1's code. No implementation yet; the work so far is establishing what the contracts actually say.","detail":"Carries the contracts, amendments, defect registers, ADRs, agile history, design-mode source art and tools/. Six kickoff items stand between here and the first implementation sprint."}],"kickoff":{"source":"Docs/agile/v2-kickoff-state.md","items":[{"n":1,"title":"Contract overview","state":"done","date":"2026-08-21","note":"Docs/contract-overview/ plus the published page. Generated from the contract text; the change ledger came out in five layers.","link":"contractOverview"},{"n":2,"title":"Contract review \u2014 where the how is missing","state":"done","date":"2026-08-21","note":"Docs/agile/contract-how-gaps.md. Five verified entries; the EN-371 boss-reward chain was checked and discharges."},{"n":3,"title":"Asset packs \u2014 definition and implementation","state":"open","note":"Unblocked 2026-08-21 by AM-006: P13.1 (AP-001..060) takes authority, the unnumbered proposal is superseded and Bubble Bath is obsolete. tools/pack-theme.py already cited AP-009, so the tooling was on P13.1 all along. HG-006 remains: P13.1 still requires a Bubble Bath fixture that no longer has a subject."},{"n":4,"title":"Author the mob damage visual","state":"done","date":"2026-08-21","note":"AM-007: UI-249 now carries a damaged state between hit and death, luminance only, with size, opacity and silhouette changes expressly forbidden. No magnitude authored -- depth is a theme-supplied slot fill under UI-232, and v1's 45% is not adopted."},{"n":5,"title":"Record the Core-blocks-projectiles decision","state":"done","date":"2026-08-21","note":"AM-004 now carries its own supersession, retained as evidence. Nothing emitted depended on the AM-004 reading -- no collision or blocking field exists in content/slice/, and every other reference was documentation."},{"n":6,"title":"Brief Claude Design on the platform authority","state":"waiting","awaiting":"a reachable design project","note":"Brief written 2026-08-21: Docs/design-brief-platform-authority.md, every claim cited. The audit cannot run -- DesignSync list_projects still returns empty, and it only lists writable design-system projects, so GUI work in an ordinary claude.ai Project would never appear. The owner has to say which of the three cases applies."}]},"v1Snapshot":{"source":"Docs/agile/readiness-assessment.md","date":"2026-08-17","caveat":"v1 figures at the Sprint 18 revision of the readiness assessment. Sprints 19-26 continued after it -- Rounds 2 and 3 completed, defenses resolved, theme packages, music states, the Career loop closed, Laser Blaster and Ray Gun. The table is the last full authored-versus-built count on record, not v1's final state.","rows":[{"system":"Career Rounds","authored":21,"built":3,"note":"Rounds 1-3 complete, all ten Waves with named encounters"},{"system":"Weapon families","authored":10,"built":4,"note":"Pistol, Rifle, Needle Burst, Shotgun at Level-1 baselines"},{"system":"Weapon levels","authored":30,"built":1,"note":"Every family authored to 30; only Level 1 realised"},{"system":"Defenses","authored":9,"built":3,"note":"One per Zone resolves; six selectable and labelled as dealing no damage"},{"system":"Navigation surfaces","authored":41,"built":11,"note":"Shell navigates the built ones on canonical node IDs"},{"system":"Behavioral Chassis","authored":7,"built":3,"note":"Hexagon is launch-ineligible by EN-431"},{"system":"Mob Traits","authored":8,"built":2,"note":"Shielded and Regenerating done"},{"system":"Runes","authored":18,"built":0,"note":"EL-304's 18 dedicated slots modelled, no effects"}]},"implementationOrder":{"source":"Docs/agile/contract-coverage-map.md","basis":"Derived from P13's required implementation order. This is the plan v2 inherits; v2 has not authored a sprint plan of its own.","sprints":[{"n":0,"goal":"Planning, scaffolding, canonical hashing","areas":"\u2014","exit":"Coverage map; hash vector gated"},{"n":1,"goal":"Manifest compiler and registry","areas":"A","exit":"2,078 records compiled from exact owner lines"},{"n":2,"goal":"Schemas, validation, fixture harness","areas":"A, L","exit":"2,386 fixtures enumerated and executing"},{"n":3,"goal":"Determinism, snapshots, persistence, migration","areas":"B","exit":"Substream traces reproducible"},{"n":4,"goal":"Battlefield, Core, Turrets, targeting","areas":"C","exit":"Event-driven targeting; obsolete properties rejected"},{"n":5,"goal":"Weapons, Elements, DOT","areas":"D","exit":"10 families L1-30; one shared DOT runtime"},{"n":6,"goal":"Mobs, traits, wave generation","areas":"E","exit":"Bounded procedural generation within spawn budget"},{"n":7,"goal":"Non-turret defenses","areas":"F","exit":"9 defenses across 3 Zones with depletion"},{"n":8,"goal":"Career, Gateway, Endless lifecycles","areas":"G","exit":"21 Rounds/210 Waves; 18 Paths at 10/6/4/10; 57 upgrades"},{"n":9,"goal":"Progression, Runes, rewards, skills","areas":"H","exit":"Drops retained, unequipped, never rerolled"},{"n":10,"goal":"Commerce","areas":"I","exit":"Success/pending/cancel/fail/offline/duplicate-callback"},{"n":11,"goal":"Unity shell and navigation","areas":"J","exit":"All 63 nodes with full state coverage"},{"n":12,"goal":"Themes, assets, audio, haptics","areas":"K","exit":"Required-slot coverage; Classic fallback"},{"n":13,"goal":"Full validation and release readiness","areas":"L","exit":"Every P14 mandatory gate green"}],"note":"Sprints 4-7 depend on 1-3 but are largely parallel with each other."},"gatesAlreadyMet":["Exactly 2,078 manifest records: 2,040 Launch-active and 38 reserved.","Zero missing/duplicate owners, IDs, consumers, or fixture joins."],"gatesNote":"Two of the eighteen reproduce today from the contract text alone, by tools/verify_contract_invariants.py. The rest need a build. None of the eighteen may be met by changing a contract -- P14's release rule requires an explicit amendment and a rerun of every affected audit.","derived":{"totals":{"contracts":356,"records":2078},"phases":[{"id":"P00","name":"Source reconciliation","purpose":"Separate current decisions from inherited assumptions","outcome":"Approved v3 baseline, reference inventory, unresolved-question register"},{"id":"P01","name":"Product and release definition","purpose":"Define the game being shipped","outcome":"Audience, orientation, session target, launch scope, platforms, success criteria"},{"id":"P02","name":"Player journey and game modes","purpose":"Define the complete experience outside and inside play","outcome":"Menu-to-run-to-results flow, supported modes, victory/defeat structure"},{"id":"P03","name":"Encounter foundation","purpose":"Define how a run operates","outcome":"Arena, Core/territory, waves, spawning, pacing, pause, completion"},{"id":"P04","name":"Combat contract","purpose":"Define shared combat rules","outcome":"Damage sequence, targeting, range, crits, movement, timing and ownership"},{"id":"P05","name":"Turrets and weapons","purpose":"Fully define equipment behavior","outcome":"Turrets, weapon catalog, weapon instances, WXP, paths, forks, evolution"},{"id":"P06","name":"Elements, runes, and DOT","purpose":"Validate or replace the reference elemental model","outcome":"Taxonomy, matrix, DOT rules, rune behavior, resistance and vulnerability"},{"id":"P07","name":"Enemies and obstacles","purpose":"Define everything opposing the player","outcome":"Mob classes, traits, elites, bosses, movement, obstacles and interactions"},{"id":"P08","name":"Defenses and player-controlled systems","purpose":"Define non-turret defensive mechanics","outcome":"Defensive catalog, placement/slots, activation, damage and progression"},{"id":"P09","name":"Progression and loadout","purpose":"Define persistent ownership and advancement","outcome":"Career progression, unlocks, inventory, loadout, skills, saves and respec"},{"id":"P10","name":"Levels, rewards, and balance model","purpose":"Create the launch progression framework","outcome":"Level catalog, wave budgets, rewards, difficulty scaling and starter values"},{"id":"P11","name":"Economy and monetization","purpose":"Define commercial systems without harming balance","outcome":"Currencies, ads, purchases, cosmetics, entitlement and restoration rules"},{"id":"P12","name":"UX and presentation","purpose":"Define the production-facing experience","outcome":"Navigation, HUD, tutorials, feedback, accessibility, art, animation and audio"},{"id":"P13","name":"Technical implementation contract","purpose":"Translate approved design into build instructions","outcome":"Unity architecture, data schemas, save versioning, services and performance budgets"},{"id":"P14","name":"Test and playground contract","purpose":"Separate verification from content demonstration","outcome":"Automated-test fixtures, diagnostic scenes and real-content playground"},{"id":"P15","name":"Production implementation","purpose":"Build the approved systems in the fresh project","outcome":"Integrated, maintainable game implementation with no invented mechanics"},{"id":"P16","name":"Vertical slice","purpose":"Prove the complete production loop","outcome":"One polished representative level on physical Android hardware"},{"id":"P17","name":"Content production and alpha","purpose":"Complete launch content","outcome":"All launch systems, levels, weapons, enemies, progression and presentation"},{"id":"P18","name":"Beta and balancing","purpose":"Validate the complete game","outcome":"Device coverage, tuning, usability, accessibility, performance and save testing"},{"id":"P19","name":"Release candidate","purpose":"Prepare the actual store product","outcome":"Final builds, analytics, privacy, billing, ads, ratings and store materials"},{"id":"P20","name":"Google Play release","purpose":"Submit and launch safely","outcome":"Review approval, staged rollout, monitoring and rollback plan"},{"id":"P21","name":"iOS release","purpose":"Complete iOS-specific adaptation and submission","outcome":"Apple compliance, device QA, purchasing validation and App Store release"},{"id":"P22","name":"Stabilization","purpose":"Resolve launch findings","outcome":"Crash fixes, urgent balance changes, player feedback review and release retrospective"}],"gates":[{"statement":"Exactly 2,078 manifest records: 2,040 Launch-active and 38 reserved.","met":true},{"statement":"Zero missing/duplicate owners, IDs, consumers, or fixture joins.","met":true},{"statement":"All 2,386 contracted P10 fixture cases execute and pass.","met":false},{"statement":"All 57 Endless upgrades pass maximum-stack, clamp, recipient, replay, and recovery tests.","met":false},{"statement":"Career has 21 Rounds/210 Waves and correct Sector boundaries.","met":false},{"statement":"Gateway has 18 Paths and exact 10/6/4/10 completion-order behavior.","met":false},{"statement":"Gateway completion locks entry and preserves read-only details.","met":false},{"statement":"Endless authored and open-ended boundaries are deterministic.","met":false},{"statement":"Rune drops do not reroll, duplicate, auto-equip, or disappear after later Round failure.","met":false},{"statement":"Save interruption at every committed boundary matches uninterrupted execution.","met":false},{"statement":"All 63 P12 nodes pass route, Back/cancel, locked, pending, failure, interruption, and recovery tests.","met":false},{"statement":"All nodes pass supported aspect ratio, text scale, input, focus, contrast, reduced-motion, mute, and haptic modes.","met":false},{"statement":"All five Launch themes pass required-slot coverage; missing overrides fall back to Classic as contracted.","met":false},{"statement":"P12A required semantic events, mixing priorities, music states, haptics, and interruption rules pass.","met":false},{"statement":"Purchases, ads, restoration, Supporter, and entitlements pass success/pending/cancel/fail/offline/duplicate-callback cases.","met":false},{"statement":"Reserved themes/badges and Rounds 22\u201325 remain unobtainable/inactive.","met":false},{"statement":"Obsolete IDs and mechanics are rejected.","met":false},{"statement":"Deterministic traces and authoritative hashes reproduce across supported builds.","met":false}],"gatesMet":2,"sprints":[{"n":0,"title":"Planning and Foundation"},{"n":1,"title":"Manifest Compiler and Canonical Registry"},{"n":2,"title":"Schemas, Validation, and the Fixture Harness"},{"n":3,"title":"Determinism, Snapshots, Persistence, and Migration"},{"n":4,"title":"Battlefield, Turrets, and Targeting"},{"n":5,"title":"Elements, Damage Resolution, and DOT"},{"n":6,"title":"Mobs, Traits, and Composition"},{"n":7,"title":"Non-Turret Defenses"},{"n":8,"title":"Encounter Lifecycle, Career Structure, and the Audio Spine"},{"n":9,"title":"Gateway Paths and Endless Defense"},{"n":10,"title":"Persistent Progression"},{"n":11,"title":"Skill Tree Catalogs and Achievements"},{"n":12,"title":"Navigation Host and the Explanation Pass"},{"n":13,"title":"Combat Audio and Weapon-Differentiated Projectiles"},{"n":14,"title":"Economy and Commerce"},{"n":15,"title":"Accessibility, Responsive Layout, and Results Integrity"},{"n":16,"title":"Shell navigation and mob chassis variety"},{"n":17,"title":"Named-encounter shapes, scatter weapons, and a readiness assessment"},{"n":18,"title":"Defenses resolve"},{"n":19,"title":"Theme packages consumed from a .zip"},{"n":20,"title":"Music and ambience states"},{"n":21,"title":"Named-encounter behaviors, Rounds 2 and 3 completed"},{"n":22,"title":"Progression reaches encounters"},{"n":23,"title":"The Skill tree becomes a choice"},{"n":24,"title":"The Career loop closes"},{"n":25,"title":"Elemental DOT and Rune drops"},{"n":26,"title":"Laser Blaster and Ray Gun"}],"findings":[{"id":"GD-001","title":"Two Gateway Path contracts have corrupted pool cells","kind":"defect","source":"Docs/agile/contract-defects.md","status":"RESOLVED 2026-08-18 \u2014 amendment approved and applied","open":false},{"id":"GD-002","title":"Gateway Wave rows omit the count limits LC-2512 requires","kind":"defect","source":"Docs/agile/contract-defects.md","status":"non-blocking; recorded so the gap is not mistaken for an oversight","open":true},{"id":"RD-001","title":"Round 1 fields only Physical mobs","kind":"defect","source":"Docs/agile/contract-defects.md","status":"not a defect; a design consequence worth an explicit decision","open":true},{"id":"RD-002","title":"The first Gateway Path is not clearable with the Load Out it grants","kind":"defect","source":"Docs/agile/contract-defects.md","status":"open; a tuning decision, not an implementation gap","open":true},{"id":"SD-001","title":"Three Skill Keystones were missing from the shipped catalog","kind":"defect","source":"Docs/agile/contract-defects.md","status":"RESOLVED 2026-08-19 \u2014 tooling defect, no contract change","open":false},{"id":"CD-002","title":"Career Rounds 4 and 5 state no minimum batch separation","kind":"defect","source":"Docs/agile/contract-defects.md","status":"open; emitted as no constraint rather than an invented one","open":true},{"id":"HG-001","title":"No contract says what a damaged mob looks like","kind":"how-gap","source":"Docs/agile/contract-how-gaps.md","status":"RESOLVED 2026-08-21 \u2014 [AM-007](../amendments/AM-007-mob-damaged-state.md)","open":false},{"id":"HG-002","title":"Two asset-package contracts, and nothing says which one governs","kind":"how-gap","source":"Docs/agile/contract-how-gaps.md","status":"RESOLVED 2026-08-21 \u2014 [AM-006](../amendments/AM-006-asset-package-authority.md)","open":false},{"id":"HG-003","title":"The save-recovery surface is fully authored; the state behind it is not","kind":"how-gap","source":"Docs/agile/contract-how-gaps.md","status":"open; PD-28 makes it a launch success criterion","open":true},{"id":"HG-004","title":"Eleven approved ER decisions have no readable text","kind":"how-gap","source":"Docs/agile/contract-how-gaps.md","status":"open; ER-19\u2013ER-22 have no definition row anywhere in the set","open":true},{"id":"HG-005","title":"A question P03 closed is still advertised as open, pointing at a model P03 forbids","kind":"how-gap","source":"Docs/agile/contract-how-gaps.md","status":"RESOLVED 2026-08-21 \u2014 [AM-008](../amendments/AM-008-pd-09-resumption-discharged.md)","open":false},{"id":"HG-006","title":"P13.1 requires a Bubble Bath fixture that no longer has a subject","kind":"how-gap","source":"Docs/agile/contract-how-gaps.md","status":"open; created by AM-006, which deliberately left it unauthored","open":true}],"openFindings":7,"kickoffDone":4,"kickoffTotal":6}};
+const D = DATA.derived;
+
+const el = (tag, cls, text) => {
+  const n = document.createElement(tag);
+  if (cls) n.className = cls;
+  if (text !== undefined) n.textContent = text;
+  return n;
+};
+const $ = (s) => document.querySelector(s);
+
+$("#eyebrow").textContent = "Project roadmap · updated " + DATA.updated;
+$("#title").textContent = DATA.title;
+$("#subtitle").textContent = DATA.subtitle;
+
+for (const [term, value, sub] of [
+  ["Contracts", D.totals.contracts],
+  ["Canonical records", D.totals.records.toLocaleString()],
+  ["Kickoff items done", D.kickoffDone, "of " + D.kickoffTotal],
+  ["Open findings", D.openFindings],
+  ["Release gates met", D.gatesMet, "of " + D.gates.length],
+]) {
+  const d = el("div", "tally");
+  d.append(el("dt", null, term));
+  const dd = el("dd", null, String(value));
+  if (sub) { dd.append(" "); dd.append(el("small", null, sub)); }
+  d.append(dd);
+  $("#tallies").append(d);
+}
+
+const main = $("#main");
+const toc = $("#toc");
+
+function section(id, heading, lede) {
+  const s = el("section");
+  s.id = id;
+  s.append(el("h2", null, heading));
+  if (lede) s.append(el("p", "lede", lede));
+  main.append(s);
+  const a = el("a", null, heading);
+  a.href = "#" + id;
+  toc.append(a);
+  return s;
+}
+
+function table(host, headers, rows) {
+  const wrap = el("div", "scroller");
+  const t = el("table");
+  const tr = el("tr");
+  for (const h of headers) tr.append(el("th", null, h.label !== undefined ? h.label : h));
+  const thead = el("thead"); thead.append(tr); t.append(thead);
+  const tbody = el("tbody");
+  for (const row of rows) {
+    const r = el("tr");
+    for (const cell of row) {
+      const td = el("td", cell.cls || null);
+      if (cell.node) td.append(cell.node);
+      else if (cell.mono) td.append(el("code", null, cell.text));
+      else td.textContent = cell.text;
+      r.append(td);
+    }
+    tbody.append(r);
+  }
+  t.append(tbody);
+  wrap.append(t);
+  host.append(wrap);
+}
+
+/* --- where things stand ------------------------------------------- */
+
+const tracks = section("tracks", "Where things stand",
+  "Three things are in play at once, and they are at very different stages.");
+const box = el("div", "tracks");
+for (const t of DATA.tracks) {
+  const c = el("article", "track is-" + t.state);
+  c.append(el("p", "state", t.state));
+  c.append(el("h3", null, t.name));
+  c.append(el("p", null, t.line));
+  c.append(el("p", null, t.detail));
+  box.append(c);
+}
+tracks.append(box);
+tracks.append(flowDiagram());
+
+/* --- the contract set --------------------------------------------- */
+
+const contracts = section("contracts", "The contract set",
+  D.totals.contracts + " contracts and " + D.totals.records.toLocaleString() +
+  " canonical records, entered through the consolidated authority index. It is the " +
+  "only implementation authority: no gameplay value, ID, pool member, reward, " +
+  "eligibility rule, UI state or conflict winner may be chosen or inferred outside it.");
+const card = el("a", "child");
+card.href = DATA.links.contractOverview;
+card.rel = "noreferrer";
+card.append(el("span", "kicker", "Section"));
+card.append(el("h3", null, "Contract overview"));
+card.append(el("p", null,
+  "What each of the " + D.totals.contracts + " contracts owns — its quoted scope, the " +
+  "rule IDs it defines, who cites it, and which amendment or defect touches it — plus " +
+  "the change ledger: rules added outside the set, supersessions, redefinitions, and the " +
+  "three numbering gaps."));
+card.append(el("span", "go", "Open the contract overview →"));
+contracts.append(card);
+
+/* --- kickoff ------------------------------------------------------- */
+
+const kickoff = section("kickoff", "What stands in the way",
+  "The v2 kickoff items, from " + DATA.kickoff.source + ". These come before the first " +
+  "implementation sprint.");
+table(kickoff, ["", "Item", "State", "Detail"], DATA.kickoff.items.map((i) => {
+  const chipCls = i.state === "done" ? "done" : i.state === "blocked" ? "blocked" : "openstate";
+  const label = i.state === "blocked" ? "blocked · " + i.blockedBy
+              : i.state === "waiting" ? "waiting · " + i.awaiting
+              : i.state === "done" ? "done · " + i.date : "open";
+  return [
+    { text: String(i.n), cls: "num" },
+    { text: i.title },
+    { node: el("span", "chip " + chipCls, label) },
+    { text: i.note },
+  ];
+}));
+
+/* --- findings ------------------------------------------------------ */
+
+const open = D.findings.filter((f) => f.open);
+const findings = section("findings", "Open findings",
+  open.length + " contract-level questions that have to be answered rather than " +
+  "implemented around. Closed entries stay in their registers as evidence and drop off " +
+  "this list on the next build, so nothing has to be remembered.");
+table(findings, ["", "Finding", "Register", "Status"], open.map((f) => [
+  { text: f.id, mono: true },
+  { text: f.title },
+  { text: f.kind, mono: true },
+  { text: f.status },
+]));
+
+/* --- implementation order ------------------------------------------ */
+
+const order = section("order", "Implementation order", DATA.implementationOrder.basis);
+table(order, ["Sprint", "Goal", "Areas", "Exit evidence"],
+  DATA.implementationOrder.sprints.map((s) => [
+    { text: String(s.n), cls: "num" },
+    { text: s.goal },
+    { text: s.areas, mono: true },
+    { text: s.exit },
+  ]));
+order.append(el("p", "lede", DATA.implementationOrder.note));
+
+/* --- gates ---------------------------------------------------------- */
+
+const gates = section("gates", "Release gates", DATA.gatesNote);
+table(gates, ["", "Gate"], D.gates.map((g) => [
+  { node: el("span", "gate-mark " + (g.met ? "met" : "unmet"), g.met ? "✓ met" : "· pending") },
+  { text: g.statement },
+]));
+
+/* --- v1 ------------------------------------------------------------- */
+
+const v1 = section("v1", "v1 — authored against built",
+  "The last full count on record, from " + DATA.v1Snapshot.source + ", " +
+  DATA.v1Snapshot.date + ". " + DATA.v1Snapshot.caveat);
+table(v1, ["System", "Built", "Authored", "", "Detail"], DATA.v1Snapshot.rows.map((r) => {
+  const meter = el("span", "meter");
+  const fill = el("span");
+  fill.style.width = Math.round((r.built / r.authored) * 100) + "%";
+  meter.append(fill);
+  return [
+    { text: r.system },
+    { text: String(r.built), cls: "num" },
+    { text: String(r.authored), cls: "num" },
+    { node: meter, cls: "meter-cell" },
+    { text: r.note },
+  ];
+}));
+
+const hist = el("details");
+hist.append(el("summary", null, "Sprint history — " + D.sprints.length + " records"));
+const list = el("div", "scroller");
+const ht = el("table");
+const htb = el("tbody");
+for (const s of D.sprints) {
+  const r = el("tr");
+  const a = el("td", "num", String(s.n));
+  r.append(a, el("td", null, s.title));
+  htb.append(r);
+}
+ht.append(htb); list.append(ht); hist.append(list);
+v1.append(hist);
+
+/* --- phases ---------------------------------------------------------- */
+
+const phases = section("phases", "The whole arc",
+  "From Docs/planned_phases.txt. P00 through P14 author the design and hand it off; " +
+  "P15 onward build and ship it. The contract set is the output of the first half.");
+table(phases, ["Phase", "Purpose", "Required outcome"], D.phases.map((p) => {
+  const node = el("span");
+  node.append(el("code", null, p.id), document.createTextNode(" " + p.name));
+  return [{ node }, { text: p.purpose }, { text: p.outcome }];
+}));
+
+const foot = el("p", "footnote");
+foot.textContent =
+  "Generated by tools/emit-roadmap.py. Narrative and status live in " +
+  "Docs/roadmap/roadmap.json; every count on this page is read from the file that " +
+  "owns it — the phase arc from planned_phases.txt, the gates from the P14 checklist, " +
+  "the findings from the two registers, the totals from the contract set. Nothing here " +
+  "is authority: on any disagreement the contract wins.";
+main.append(foot);
+
+/* One figure: where a finding goes. The whole discipline of this project is
+   that a gap found in code routes back to the contracts rather than being
+   patched in place, and that is the thing prose keeps failing to make vivid. */
+function flowDiagram() {
+  const fig = el("figure");
+  fig.innerHTML = `
+<svg viewBox="0 0 700 250" role="img"
+     aria-label="The contract set feeds both builds. v1 is frozen; v2 is building from the contracts. A gap found while building routes back into a register and then into an amendment to the contract set, never into a local fix.">
+  <defs>
+    <marker id="rm" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor"/>
+    </marker>
+    <marker id="rmhi" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="hifill"/>
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1.25">
+    <rect x="10" y="86" width="150" height="72" rx="3" class="hi" stroke-width="1.75"/>
+    <rect x="268" y="14" width="140" height="60" rx="3" stroke-dasharray="4 3"/>
+    <rect x="268" y="170" width="140" height="60" rx="3"/>
+    <rect x="500" y="170" width="190" height="60" rx="3"/>
+  </g>
+  <g stroke="currentColor" stroke-width="1.25" fill="none" marker-end="url(#rm)">
+    <path d="M 160 110 L 210 110 L 210 44 L 262 44"/>
+    <path d="M 160 134 L 210 134 L 210 200 L 262 200"/>
+    <path d="M 408 200 L 494 200"/>
+  </g>
+  <path d="M 595 170 L 595 122 L 166 122" class="hi" stroke-width="1.75" fill="none"
+        marker-end="url(#rmhi)"/>
+  <g font-family="ui-monospace, Consolas, monospace" font-size="12" fill="currentColor">
+    <text x="85" y="116" text-anchor="middle" class="hi">contract set</text>
+    <text x="338" y="40" text-anchor="middle">v1</text>
+    <text x="338" y="196" text-anchor="middle">v2</text>
+    <text x="595" y="196" text-anchor="middle">register entry</text>
+  </g>
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="currentColor" opacity="0.72">
+    <text x="85" y="134" text-anchor="middle" class="hi">356 contracts</text>
+    <text x="338" y="58" text-anchor="middle">frozen</text>
+    <text x="338" y="214" text-anchor="middle">building</text>
+    <text x="595" y="214" text-anchor="middle">defect or how-gap</text>
+    <text x="451" y="192" text-anchor="middle">gap found</text>
+    <text x="380" y="116" text-anchor="middle" class="hi">amendment</text>
+  </g>
+</svg>`;
+  fig.append(el("figcaption", null,
+    "v1 is drawn dashed because nothing flows out of it any more. The return path is " +
+    "the part that matters: a gap found while building becomes a register entry and " +
+    "then an amendment to the contract set, rather than a fix in the code that found " +
+    "it. HG-001 exists because v1 took the other route."));
+  return fig;
+}
+</script>
