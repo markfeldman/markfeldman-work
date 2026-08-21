@@ -136,14 +136,24 @@ export default function Home() {
           </div>
         </Reveal>
 
+        <Reveal className="flex flex-col gap-2">
+          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
+            Current projects
+          </h2>
+          <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            Two builds running now. One is about what agents are allowed to do;
+            the other is about what happens when they are forbidden to guess.
+          </p>
+        </Reveal>
+
         <Reveal className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
             <span className="w-fit rounded-full border border-[#2a78d6]/30 bg-[#2a78d6]/10 px-3 py-1 font-mono text-xs tracking-wide text-[#1c5cab] uppercase dark:text-[#86b6ef]">
               In progress
             </span>
-            <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
+            <h3 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
               Atlas — a governance layer for multi-agent work
-            </h2>
+            </h3>
           </div>
           <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
             The problem I keep hitting: agents will happily do consequential
@@ -170,9 +180,9 @@ export default function Home() {
           </a>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
-              <h3 className="font-medium text-black dark:text-zinc-50">
+              <h4 className="font-medium text-black dark:text-zinc-50">
                 Enforcement is structural, not prompt-based
-              </h3>
+              </h4>
               <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
                 Advisor agents can&apos;t write code because they&apos;re
                 dispatched into a task shape that has no branch, push, or
@@ -183,9 +193,9 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
-              <h3 className="font-medium text-black dark:text-zinc-50">
+              <h4 className="font-medium text-black dark:text-zinc-50">
                 I cut half of it mid-build
-              </h3>
+              </h4>
               <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
                 The original design had Atlas building its own agent dispatch
                 and supervision layer. Partway in, it was clear that
@@ -196,15 +206,88 @@ export default function Home() {
               </p>
             </div>
             <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
-              <h3 className="font-medium text-black dark:text-zinc-50">
+              <h4 className="font-medium text-black dark:text-zinc-50">
                 761 passing tests, and one honest gap
-              </h3>
+              </h4>
               <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
                 Eight phases built and reviewed. A platform dependency blocks
                 real end-to-end dispatch verification on Windows, so that
                 gate is documented as partially met with the reason — not
                 rounded up to green. A governance system that overstates its
                 own conformance would be self-defeating.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <span className="w-fit rounded-full border border-[#2a78d6]/30 bg-[#2a78d6]/10 px-3 py-1 font-mono text-xs tracking-wide text-[#1c5cab] uppercase dark:text-[#86b6ef]">
+              In progress
+            </span>
+            <h3 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
+              Perimeter-Cerberus — agents under a frozen contract set
+            </h3>
+          </div>
+          <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            A game built against 356 design contracts that are the sole
+            authority: no gameplay value, ID, reward or UI state may be chosen
+            or inferred outside them. It is the closest thing I have to a
+            controlled experiment in what agents do when guessing is forbidden
+            — because every time one wanted to fill a gap, the gap got written
+            down instead.
+          </p>
+          <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            Twenty-six sprints, a shipped Windows build and Android APK, and
+            two registers of everything the contracts got wrong. The
+            implementation stays private — it is an unreleased game — but the
+            engineering record is published here.
+          </p>
+          <Link
+            href="/perimeter-cerberus"
+            className="w-fit rounded-full border border-[#2a78d6]/40 bg-[#2a78d6]/10 px-5 py-2.5 text-base font-medium text-[#1c5cab] transition-all hover:-translate-y-0.5 hover:border-[#2a78d6] hover:shadow-lg hover:shadow-[#2a78d6]/15 dark:text-[#86b6ef]"
+          >
+            Read the project roadmap →
+          </Link>
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
+              <h4 className="font-medium text-black dark:text-zinc-50">
+                It refused to invent a value nobody wrote
+              </h4>
+              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                Career Rounds 1 through 3 set a minimum spawn separation of
+                20°, 18°, 16°. Rounds 4 and 5 state none. The obvious
+                continuation is 14 and 12, and that is exactly the problem —
+                it would put a spawn rule into the game under a citation that
+                never mentions one. The generator emits zero, prints a warning,
+                and the gap is filed as a defect awaiting an amendment.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
+              <h4 className="font-medium text-black dark:text-zinc-50">
+                A success that was silently wrong
+              </h4>
+              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                A generator&apos;s pattern matched letters followed by at least
+                one digit, so three letters-only skill keystones never matched
+                and never became nodes. Nothing failed. The output was
+                well-formed and 33 nodes is a perfectly plausible number. It
+                surfaced only because a second, independent reading of the same
+                contracts was cross-checked against the first — which is the
+                only reason anyone found it at all.
+              </p>
+            </div>
+            <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
+              <h4 className="font-medium text-black dark:text-zinc-50">
+                Two of eighteen release gates met
+              </h4>
+              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
+                The other sixteen are listed as pending rather than deferred
+                out of sight. The test suite is 1,569 cases; the last CI run
+                reported 1,555 passing and 14 failing on all three platforms,
+                every one of them looking for a generated file that is not
+                committed. That is a provisioning gap, and it is written down
+                as one instead of being rounded up.
               </p>
             </div>
           </div>
