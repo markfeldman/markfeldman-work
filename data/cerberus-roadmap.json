@@ -660,11 +660,11 @@
     "title": "P13.1 requires a Bubble Bath fixture that no longer has a subject",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "open; created by AM-006, which deliberately left it unauthored",
-    "open": true
+    "status": "RESOLVED 2026-08-21 \u2014 [AM-009](../amendments/AM-009-classic-reference-package.md)",
+    "open": false
    }
   ],
-  "openFindings": 7,
+  "openFindings": 6,
   "kickoffDone": 4,
   "kickoffTotal": 6
  }
