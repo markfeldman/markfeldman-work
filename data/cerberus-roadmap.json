@@ -588,8 +588,8 @@
     "title": "Round 1 fields only Physical mobs",
     "kind": "defect",
     "source": "Docs/agile/contract-defects.md",
-    "status": "not a defect; a design consequence worth an explicit decision",
-    "open": true
+    "status": "RESOLVED 2026-08-21 \u2014 [AM-015](../amendments/AM-015-balanced-ordinary-mob-domain-default.md)",
+    "open": false
    },
    {
     "id": "RD-002",
@@ -664,7 +664,7 @@
     "open": false
    }
   ],
-  "openFindings": 1,
+  "openFindings": 0,
   "kickoffDone": 4,
   "kickoffTotal": 6
  }
