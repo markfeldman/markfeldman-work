@@ -60,7 +60,7 @@
     "n": 3,
     "title": "Asset packs \u2014 definition and implementation",
     "state": "open",
-    "note": "Unblocked 2026-08-21 by AM-006: P13.1 (AP-001..060) takes authority, the unnumbered proposal is superseded and Bubble Bath is obsolete. tools/pack-theme.py already cited AP-009, so the tooling was on P13.1 all along. HG-006 remains: P13.1 still requires a Bubble Bath fixture that no longer has a subject."
+    "note": "Unblocked 2026-08-21 by AM-006: P13.1 (AP-001..060) takes authority, the unnumbered proposal is superseded and Bubble Bath is obsolete. HG-006 was resolved by AM-009: Classic is the identity-neutral canonical reference package. Item 3 remains open for whole-package definition and implementation beyond the existing audio example."
    },
    {
     "n": 4,
