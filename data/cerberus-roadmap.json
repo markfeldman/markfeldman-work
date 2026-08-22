@@ -60,7 +60,7 @@
     "n": 3,
     "title": "Asset packs \u2014 definition and implementation",
     "state": "open",
-    "note": "P13.1 (AP-001..060) remains the pipeline authority and AM-009 makes Classic the identity-neutral reference. Re-audit reopened contract authoring: RD-003 is the missing themeId/packageId bridge, HG-007 is the missing launch entitlement-ID mapping, and HG-008 is the absent exact visual-slot catalog and five-theme manifest/coverage source. Draft AM-016 addresses only RD-003 and HG-007; no finding is closed."
+    "note": "P13.1 remains the generic lifecycle authority, but re-audit leaves four authoring blockers: RD-003 identity conflict, HG-007 entitlement binding, HG-008 exact visual-slot/manifest coverage, and HG-009 package composition/schema/artifact/repository handoff. AM-016 is deferred because its first draft duplicated themeId and packageId one-to-one without an authored purpose; it closes nothing until the package model determines whether two identities are needed."
    },
    {
     "n": 4,
@@ -620,7 +620,7 @@
     "title": "The P13 package manifest cannot represent the theme identity P11 and P12 require",
     "kind": "defect",
     "source": "Docs/agile/contract-defects.md",
-    "status": "OPEN 2026-08-21 \u2014 [AM-016](../amendments/AM-016-launch-theme-package-identity-bridge.md)",
+    "status": "OPEN 2026-08-22 \u2014 [AM-016](../amendments/AM-016-launch-theme-package-identity-bridge.md)",
     "open": true
    },
    {
@@ -676,7 +676,7 @@
     "title": "Four launch packages have no authored entitlement identity",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "OPEN 2026-08-21 \u2014 [AM-016](../amendments/AM-016-launch-theme-package-identity-bridge.md)",
+    "status": "OPEN 2026-08-22 \u2014 [AM-016](../amendments/AM-016-launch-theme-package-identity-bridge.md)",
     "open": true
    },
    {
@@ -684,11 +684,19 @@
     "title": "No exact visual-slot catalog can produce the five launch package manifests",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "OPEN 2026-08-21 \u2014 not resolved by draft AM-016.",
+    "status": "OPEN 2026-08-22 \u2014 not resolved by deferred AM-016.",
+    "open": true
+   },
+   {
+    "id": "HG-009",
+    "title": "Asset-package composition and artifact implementation are not authored",
+    "kind": "how-gap",
+    "source": "Docs/agile/contract-how-gaps.md",
+    "status": "OPEN 2026-08-22 \u2014 blocks an approval-ready AM-016 and complete asset-package implementation.",
     "open": true
    }
   ],
-  "openFindings": 3,
+  "openFindings": 4,
   "kickoffDone": 4,
   "kickoffTotal": 6
  }
