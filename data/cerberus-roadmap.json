@@ -612,8 +612,8 @@
     "title": "Career Rounds 4 and 5 state no minimum batch separation",
     "kind": "defect",
     "source": "Docs/agile/contract-defects.md",
-    "status": "open; emitted as no constraint rather than an invented one",
-    "open": true
+    "status": "RESOLVED 2026-08-21 \u2014 [AM-012](../amendments/AM-012-career-batch-separation.md)",
+    "open": false
    },
    {
     "id": "HG-001",
@@ -664,7 +664,7 @@
     "open": false
    }
   ],
-  "openFindings": 4,
+  "openFindings": 3,
   "kickoffDone": 4,
   "kickoffTotal": 6
  }
