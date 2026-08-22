@@ -60,7 +60,7 @@
     "n": 3,
     "title": "Asset packs \u2014 definition and implementation",
     "state": "open",
-    "note": "Unblocked 2026-08-21 by AM-006: P13.1 (AP-001..060) takes authority, the unnumbered proposal is superseded and Bubble Bath is obsolete. HG-006 was resolved by AM-009: Classic is the identity-neutral canonical reference package. Item 3 remains open for whole-package definition and implementation beyond the existing audio example."
+    "note": "P13.1 (AP-001..060) remains the pipeline authority and AM-009 makes Classic the identity-neutral reference. Re-audit reopened contract authoring: RD-003 is the missing themeId/packageId bridge, HG-007 is the missing launch entitlement-ID mapping, and HG-008 is the absent exact visual-slot catalog and five-theme manifest/coverage source. Draft AM-016 addresses only RD-003 and HG-007; no finding is closed."
    },
    {
     "n": 4,
@@ -616,6 +616,14 @@
     "open": false
    },
    {
+    "id": "RD-003",
+    "title": "The P13 package manifest cannot represent the theme identity P11 and P12 require",
+    "kind": "defect",
+    "source": "Docs/agile/contract-defects.md",
+    "status": "OPEN 2026-08-21 \u2014 [AM-016](../amendments/AM-016-launch-theme-package-identity-bridge.md)",
+    "open": true
+   },
+   {
     "id": "HG-001",
     "title": "No contract says what a damaged mob looks like",
     "kind": "how-gap",
@@ -662,9 +670,25 @@
     "source": "Docs/agile/contract-how-gaps.md",
     "status": "RESOLVED 2026-08-21 \u2014 [AM-009](../amendments/AM-009-classic-reference-package.md)",
     "open": false
+   },
+   {
+    "id": "HG-007",
+    "title": "Four launch packages have no authored entitlement identity",
+    "kind": "how-gap",
+    "source": "Docs/agile/contract-how-gaps.md",
+    "status": "OPEN 2026-08-21 \u2014 [AM-016](../amendments/AM-016-launch-theme-package-identity-bridge.md)",
+    "open": true
+   },
+   {
+    "id": "HG-008",
+    "title": "No exact visual-slot catalog can produce the five launch package manifests",
+    "kind": "how-gap",
+    "source": "Docs/agile/contract-how-gaps.md",
+    "status": "OPEN 2026-08-21 \u2014 not resolved by draft AM-016.",
+    "open": true
    }
   ],
-  "openFindings": 0,
+  "openFindings": 3,
   "kickoffDone": 4,
   "kickoffTotal": 6
  }
