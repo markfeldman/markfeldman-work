@@ -644,8 +644,8 @@
     "title": "Eleven approved ER decisions have no readable text",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "open; ER-19\u2013ER-22 have no definition row anywhere in the set",
-    "open": true
+    "status": "RESOLVED 2026-08-21 \u2014 [AM-013](../amendments/AM-013-p03-encounter-lifecycle-replacement-definitions.md)",
+    "open": false
    },
    {
     "id": "HG-005",
@@ -664,7 +664,7 @@
     "open": false
    }
   ],
-  "openFindings": 3,
+  "openFindings": 2,
   "kickoffDone": 4,
   "kickoffTotal": 6
  }
