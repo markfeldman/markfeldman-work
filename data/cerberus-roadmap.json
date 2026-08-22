@@ -580,8 +580,8 @@
     "title": "Gateway Wave rows omit the count limits LC-2512 requires",
     "kind": "defect",
     "source": "Docs/agile/contract-defects.md",
-    "status": "non-blocking; recorded so the gap is not mistaken for an oversight",
-    "open": true
+    "status": "RESOLVED 2026-08-21 \u2014 [AM-014](../amendments/AM-014-gateway-wave-default-limits.md)",
+    "open": false
    },
    {
     "id": "RD-001",
@@ -664,7 +664,7 @@
     "open": false
    }
   ],
-  "openFindings": 2,
+  "openFindings": 1,
   "kickoffDone": 4,
   "kickoffTotal": 6
  }
