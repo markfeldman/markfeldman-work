@@ -596,8 +596,8 @@
     "title": "The first Gateway Path is not clearable with the Load Out it grants",
     "kind": "defect",
     "source": "Docs/agile/contract-defects.md",
-    "status": "open; a tuning decision, not an implementation gap",
-    "open": true
+    "status": "RESOLVED 2026-08-21 \u2014 [AM-011](../amendments/AM-011-gateway-only-core-hp.md)",
+    "open": false
    },
    {
     "id": "SD-001",
@@ -664,7 +664,7 @@
     "open": false
    }
   ],
-  "openFindings": 5,
+  "openFindings": 4,
   "kickoffDone": 4,
   "kickoffTotal": 6
  }
