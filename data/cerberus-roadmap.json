@@ -636,8 +636,8 @@
     "title": "The save-recovery surface is fully authored; the state behind it is not",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "open; PD-28 makes it a launch success criterion",
-    "open": true
+    "status": "RESOLVED 2026-08-21 \u2014 [AM-010](../amendments/AM-010-save-recovery-outcomes.md)",
+    "open": false
    },
    {
     "id": "HG-004",
@@ -664,7 +664,7 @@
     "open": false
    }
   ],
-  "openFindings": 6,
+  "openFindings": 5,
   "kickoffDone": 4,
   "kickoffTotal": 6
  }
