@@ -684,7 +684,7 @@
     "title": "No exact visual-slot catalog can produce the five launch package manifests",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "OPEN AND UNBLOCKED 2026-08-23 \u2014 AM-018 authors the strict catalog-pin and slot-binding representation; the exact expanded catalog and launch coverage remain unauthored.",
+    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-020 approves the exact catalog matrices, metadata, VFX namespace, compatibility and fallback profiles, geometry boundary, and five-package coverage-skeleton requirements. The contracted source, flat catalog fingerprint, and five skeleton artifacts remain to be emitted before closure.",
     "open": true
    },
    {
@@ -692,7 +692,7 @@
     "title": "Asset-package composition and artifact implementation are not authored",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 approves the product/authority foundation; AM-018 approves schema, composition, artifact, integrity, and handoff; AM-019 approves the launch identities and entitlement mappings. Concrete catalogs, distribution/install/update policy, Player Experience, and coordinated legacy reconciliation remain downstream.",
+    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 approves the product/authority foundation; AM-018 approves schema, composition, artifact, integrity, and handoff; AM-019 approves the launch identities and entitlement mappings; AM-020 approves the exact visual/animation/VFX catalog authority. Generated catalog artifacts, distribution/install/update policy, Player Experience, collaboration, and coordinated legacy reconciliation remain downstream.",
     "open": true
    }
   ],
