@@ -692,7 +692,7 @@
     "title": "Asset-package composition and artifact implementation are not authored",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 approves the product/authority foundation; AM-018 approves schema, composition, artifact, integrity, and handoff; AM-019 approves launch identities and entitlement mappings; AM-020 approves exact visual/animation/VFX catalog authority; AM-021 approves distribution and backend lifecycle; AM-022 approves Theme-management Player Experience, exact component keys, and the amended 64-node navigation map. Generated catalog artifacts, the all-screen collaboration manifest, and coordinated legacy reconciliation remain downstream.",
+    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 approves the product/authority foundation; AM-018 approves schema, composition, artifact, integrity, and handoff; AM-019 approves launch identities and entitlement mappings; AM-020 approves exact visual/animation/VFX catalog authority; AM-021 approves distribution and backend lifecycle; AM-022 approves Theme-management Player Experience, exact component keys, and the amended 64-node navigation map; AM-023 approves the all-screen presentation artifact model, exhaustive element classification, and Claude Design-to-Unity collaboration boundary. Generated catalogs, presentation artifacts/tooling, Unity scaffolding, and coordinated legacy reconciliation remain downstream.",
     "open": true
    }
   ],
