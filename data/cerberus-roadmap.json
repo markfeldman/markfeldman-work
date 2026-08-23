@@ -620,7 +620,7 @@
     "title": "The P13 package manifest cannot represent the theme identity P11 and P12 require",
     "kind": "defect",
     "source": "Docs/agile/contract-defects.md",
-    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 selects `packageId` as the sole identity, AM-018 prohibits `themeId` in the new representation, and AM-019 supplies the exact five-row launch migration map. Final mechanical P11/P12/P12A/P13, manifest, API, save, fixture, and canonical-inventory reconciliation remains required.",
+    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-024 approves the final `packageId`-only conflict reading, exact five-row migration artifact, API/save/source/tooling dispositions, and closure gates. Mechanical closure still requires Migration Gates 1\u20134 and the contracted zero-`themeId` manifest/API/save/fixture evidence.",
     "open": true
    },
    {
@@ -684,7 +684,7 @@
     "title": "No exact visual-slot catalog can produce the five launch package manifests",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-020 approves the exact catalog matrices, metadata, VFX namespace, compatibility and fallback profiles, geometry boundary, and five-package coverage-skeleton requirements. The contracted source, flat catalog fingerprint, and five skeleton artifacts remain to be emitted before closure.",
+    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-020 approves the exact catalog matrices and five skeleton requirements; AM-024 reconciles them to the 64-node set and makes their reproducible emission Migration Gate 2. The contracted source, flat catalog fingerprint, and five skeleton artifacts remain absent and required for closure.",
     "open": true
    },
    {
@@ -692,7 +692,7 @@
     "title": "Asset-package composition and artifact implementation are not authored",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 approves the product/authority foundation; AM-018 approves schema, composition, artifact, integrity, and handoff; AM-019 approves launch identities and entitlement mappings; AM-020 approves exact visual/animation/VFX catalog authority; AM-021 approves distribution and backend lifecycle; AM-022 approves Theme-management Player Experience, exact component keys, and the amended 64-node navigation map; AM-023 approves the all-screen presentation artifact model, exhaustive element classification, and Claude Design-to-Unity collaboration boundary. Generated catalogs, presentation artifacts/tooling, Unity scaffolding, and coordinated legacy reconciliation remain downstream.",
+    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 through AM-023 approve the complete product, representation, identity, catalog, lifecycle, Player Experience, navigation, and collaboration model; AM-024 approves the final naming, landscape, 64-node, `packageId`, source/API/save/tooling reconciliation and six implementation gates. Contract authoring is complete. Generated catalogs/packages/schemas, migration execution, presentation artifacts/tooling, Unity scaffolding, Claude Design handoff, and the verified five-Theme vertical slice remain downstream implementation.",
     "open": true
    }
   ],
