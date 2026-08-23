@@ -620,7 +620,7 @@
     "title": "The P13 package manifest cannot represent the theme identity P11 and P12 require",
     "kind": "defect",
     "source": "Docs/agile/contract-defects.md",
-    "status": "OPEN 2026-08-22 \u2014 [AM-016](../amendments/AM-016-launch-theme-package-identity-bridge.md)",
+    "status": "OPEN AND UNBLOCKED 2026-08-23 \u2014 AM-017 selects `packageId` as the single machine identity and AM-018 prohibits `themeId` in the new source/runtime representation. The launch identity contract and final P11/P12/P12A/P13 reconciliation/migration must now apply that decision explicitly.",
     "open": true
    },
    {
@@ -676,7 +676,7 @@
     "title": "Four launch packages have no authored entitlement identity",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "OPEN 2026-08-22 \u2014 [AM-016](../amendments/AM-016-launch-theme-package-identity-bridge.md)",
+    "status": "OPEN AND UNBLOCKED 2026-08-23 \u2014 AM-017 establishes one package per Theme and `packageId` as the selection/entitlement target; AM-018 authors the required manifest representation. The four concrete entitlement bindings remain to be authored next.",
     "open": true
    },
    {
@@ -684,7 +684,7 @@
     "title": "No exact visual-slot catalog can produce the five launch package manifests",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "OPEN 2026-08-22 \u2014 not resolved by deferred AM-016.",
+    "status": "OPEN AND UNBLOCKED 2026-08-23 \u2014 AM-018 authors the strict catalog-pin and slot-binding representation; the exact expanded catalog and launch coverage remain unauthored.",
     "open": true
    },
    {
@@ -692,7 +692,7 @@
     "title": "Asset-package composition and artifact implementation are not authored",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "OPEN 2026-08-22 \u2014 blocks an approval-ready AM-016 and complete asset-package implementation.",
+    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 approves the product and authority foundation; AM-018 approves exact identity, schemas, source composition, cross-repository handoff, runtime artifact, canonicalization, integrity, signatures, deterministic build, and stable admission. Concrete catalog/distribution/install/update policy and coordinated legacy reconciliation remain downstream.",
     "open": true
    }
   ],
