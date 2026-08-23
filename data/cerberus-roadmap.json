@@ -694,9 +694,17 @@
     "source": "Docs/agile/contract-how-gaps.md",
     "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 through AM-023 approve the complete product, representation, identity, catalog, lifecycle, Player Experience, navigation, and collaboration model; AM-024 approves the final naming, landscape, 64-node, `packageId`, source/API/save/tooling reconciliation and six implementation gates. Contract authoring is complete, and Migration Gate 1 now has locked product/platform/navigation outputs, repository-wide authority inventory, verification, and rollback evidence. Gates 2\u20136\u2014generated catalogs/packages/API and save schemas, migration execution, distribution tooling, presentation tooling, Unity scaffolding, Claude Design handoff, and the verified five-Theme vertical slice\u2014remain downstream implementation.",
     "open": true
+   },
+   {
+    "id": "HG-010",
+    "title": "Gate 2 catalog metadata and strict package-source shapes are incomplete",
+    "kind": "how-gap",
+    "source": "Docs/agile/contract-how-gaps.md",
+    "status": "AUTHORITY RESOLVED 2026-08-23 \u2014 AM-025 is approved and supplies the exact machine shapes, derivation rules, source-skeleton state, and 43-file Classic disposition required to resume Gate 2; mechanical closure remains Gate 2 evidence",
+    "open": true
    }
   ],
-  "openFindings": 3,
+  "openFindings": 4,
   "kickoffDone": 4,
   "kickoffTotal": 6
  }
