@@ -620,7 +620,7 @@
     "title": "The P13 package manifest cannot represent the theme identity P11 and P12 require",
     "kind": "defect",
     "source": "Docs/agile/contract-defects.md",
-    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-024 approves the final `packageId`-only conflict reading, exact five-row migration artifact, API/save/source/tooling dispositions, and closure gates. Mechanical closure still requires Migration Gates 1\u20134 and the contracted zero-`themeId` manifest/API/save/fixture evidence.",
+    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-024 approves the final `packageId`-only conflict reading, exact five-row migration artifact, API/save/source/tooling dispositions, and closure gates. Migration Gate 1 is mechanically complete and locks the current identity/platform/navigation authority. Closure still requires Migration Gates 2\u20134 and the contracted zero-`themeId` manifest/API/save/fixture evidence.",
     "open": true
    },
    {
@@ -692,7 +692,7 @@
     "title": "Asset-package composition and artifact implementation are not authored",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 through AM-023 approve the complete product, representation, identity, catalog, lifecycle, Player Experience, navigation, and collaboration model; AM-024 approves the final naming, landscape, 64-node, `packageId`, source/API/save/tooling reconciliation and six implementation gates. Contract authoring is complete. Generated catalogs/packages/schemas, migration execution, presentation artifacts/tooling, Unity scaffolding, Claude Design handoff, and the verified five-Theme vertical slice remain downstream implementation.",
+    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 through AM-023 approve the complete product, representation, identity, catalog, lifecycle, Player Experience, navigation, and collaboration model; AM-024 approves the final naming, landscape, 64-node, `packageId`, source/API/save/tooling reconciliation and six implementation gates. Contract authoring is complete, and Migration Gate 1 now has locked product/platform/navigation outputs, repository-wide authority inventory, verification, and rollback evidence. Gates 2\u20136\u2014generated catalogs/packages/API and save schemas, migration execution, distribution tooling, presentation tooling, Unity scaffolding, Claude Design handoff, and the verified five-Theme vertical slice\u2014remain downstream implementation.",
     "open": true
    }
   ],
