@@ -700,7 +700,7 @@
     "title": "Gate 2 catalog metadata and strict package-source shapes are incomplete",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "AUTHORITY RESOLVED 2026-08-23 \u2014 AM-025 is approved and supplies the exact machine shapes, derivation rules, source-skeleton state, and 43-file Classic disposition required to resume Gate 2; mechanical closure remains Gate 2 evidence",
+    "status": "PARTIALLY AUTHORITY RESOLVED 2026-08-23 \u2014 AM-025 supplies machine shapes, derivation rules, source-skeleton state, and Classic disposition, but compiler audit found per-role compatibility-profile winners and Rune-drop inclusion/count still unauthored; AM-026 is proposed, and mechanical closure remains Gate 2 evidence",
     "open": true
    }
   ],
