@@ -35,7 +35,7 @@
    "name": "v2 \u2014 the second build",
    "state": "starting",
    "line": "Starts from the contracts, not from v1's code. Presentation authority now specifies one launch baseline and direct asset-repository management.",
-   "detail": "AM-024 Gate 1 established product/orientation evidence; AM-027 replaces the abandoned package path with five direct-asset gates. Replacement Gates 1 and 2 are complete: the exact 58-node navigation is reconciled and the 43-file legacy tree is dispositioned 28/11/4 with Assets/Themes removed and no runtime bindings created. Replacement Gate 3 direct asset-management scaffolding is next."
+   "detail": "AM-024 Gate 1 established product/orientation evidence; AM-027 replaces the abandoned package path with five direct-asset gates. Replacement Gates 1\u20133 are complete: exact 58-node navigation, neutral 43-file disposition, and the strict empty-valid five-command direct asset lifecycle with external policy and CI. Publish remains blocked until Gate 4 approves the Unity implementation target."
   }
  ],
  "kickoff": {
@@ -61,7 +61,7 @@
     "title": "Launch presentation and direct asset management",
     "state": "done",
     "date": "2026-08-23",
-    "note": "AM-027 removes launch Theme/Asset Package mechanics, establishes one game-owned baseline, defines the exact v2/external-assets request\u2192record\u2192lock\u2192sync\u2192publish\u2192verify lifecycle, and replaces AM-024 package Gates 2\u20136 with five direct-asset implementation gates. Replacement Gates 1\u20132 are complete; Gate 3 direct asset-management scaffolding is next."
+    "note": "AM-027 removes launch Theme/Asset Package mechanics, establishes one game-owned baseline, defines the exact v2/external-assets request\u2192record\u2192lock\u2192sync\u2192publish\u2192verify lifecycle, and replaces AM-024 package Gates 2\u20136 with five direct-asset implementation gates. Replacement Gates 1\u20133 are complete; Gate 4 single-baseline design scaffolding is next."
    },
    {
     "n": 4,
@@ -709,7 +709,7 @@
     "title": "Single-baseline asset-repository integration and lifecycle are not authored",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "AUTHORITY RESOLVED 2026-08-23 \u2014 AM-027 approves exact repository ownership, asset/request identities and records, paths, commit/digest locks, rights, lifecycle states, deterministic tooling, Unity publication, QA, rollback, and five replacement implementation gates; Replacement Gates 1\u20132 are complete and mechanical closure requires Gates 3\u20135",
+    "status": "AUTHORITY RESOLVED 2026-08-23 \u2014 AM-027 approves exact repository ownership, asset/request identities and records, paths, commit/digest locks, rights, lifecycle states, deterministic tooling, Unity publication, QA, rollback, and five replacement implementation gates; Replacement Gates 1\u20133 are complete and mechanical closure requires Gates 4\u20135",
     "open": true
    }
   ],
