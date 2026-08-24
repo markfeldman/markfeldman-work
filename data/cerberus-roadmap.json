@@ -35,7 +35,7 @@
    "name": "v2 \u2014 the second build",
    "state": "starting",
    "line": "Starts from the contracts, not from v1's code. Presentation authority now specifies one launch baseline and direct asset-repository management.",
-   "detail": "AM-024 Gate 1 established product/orientation evidence; AM-027 replaces the abandoned package path with five direct-asset gates. Replacement Gates 1\u20133 are complete: exact 58-node navigation, neutral 43-file disposition, and the strict empty-valid five-command direct asset lifecycle with external policy and CI. Publish remains blocked until Gate 4 approves the Unity implementation target."
+   "detail": "AM-024 Gate 1 established product/orientation evidence; AM-027 replaces the abandoned package path with five direct-asset gates. Replacement Gates 1\u20133 are complete. Gate 4 has exact 58+1 scaffolds, a deterministic input pack, strict handoff tooling, the approved v2 Unity 6000.3.21f1 UI Toolkit target, atomic publication, and offline round-trip proof; it remains open for one real Claude Design ZIP inspection/import lock."
   }
  ],
  "kickoff": {
@@ -61,7 +61,7 @@
     "title": "Launch presentation and direct asset management",
     "state": "done",
     "date": "2026-08-23",
-    "note": "AM-027 removes launch Theme/Asset Package mechanics, establishes one game-owned baseline, defines the exact v2/external-assets request\u2192record\u2192lock\u2192sync\u2192publish\u2192verify lifecycle, and replaces AM-024 package Gates 2\u20136 with five direct-asset implementation gates. Replacement Gates 1\u20133 are complete; Gate 4 single-baseline design scaffolding is next."
+    "note": "AM-027 removes launch Theme/Asset Package mechanics, establishes one game-owned baseline, defines the exact v2/external-assets request\u2192record\u2192lock\u2192sync\u2192publish\u2192verify lifecycle, and replaces AM-024 package Gates 2\u20136 with five direct-asset implementation gates. Replacement Gates 1\u20133 are complete; Gate 4 is mechanically ready and awaits one real Claude Design export inspection/import lock."
    },
    {
     "n": 4,
@@ -81,8 +81,8 @@
     "n": 6,
     "title": "Brief Claude Design on the platform authority",
     "state": "waiting",
-    "awaiting": "a reachable design project",
-    "note": "The original brief predates AM-027 and must be regenerated for 58 nodes, one baseline, direct Asset/Usage IDs, and the new vertical slice during Replacement Gate 4. Design-system project connectivity remains an operator prerequisite."
+    "awaiting": "one real Claude Design export",
+    "note": "The 58+1 input pack, exact MCP/manual operator guide, direct Asset/Usage boundary, approved Unity target, and offline round-trip proof are ready. Connect the intended Claude organization/project, author and review the first increment, then inspect/import the real downloaded ZIP to close Replacement Gate 4."
    }
   ]
  },
