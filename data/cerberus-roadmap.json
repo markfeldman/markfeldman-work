@@ -10,7 +10,7 @@
  ],
  "title": "Perimeter-Cerberus",
  "subtitle": "Where the project is, what it is built on, and what remains.",
- "updated": "2026-08-21",
+ "updated": "2026-08-23",
  "links": {
   "contractOverview": "https://claude.ai/code/artifact/48318025-e4a5-4b1f-9420-625484342933",
   "contractOverviewDocs": "../contract-overview/README.md"
@@ -34,8 +34,8 @@
    "id": "v2",
    "name": "v2 \u2014 the second build",
    "state": "starting",
-   "line": "Starts from the contracts, not from v1's code. No implementation yet; the work so far is establishing what the contracts actually say.",
-   "detail": "Carries the contracts, amendments, defect registers, ADRs, agile history, design-mode source art and tools/. Six kickoff items stand between here and the first implementation sprint."
+   "line": "Starts from the contracts, not from v1's code. Presentation authority now specifies one launch baseline and direct asset-repository management.",
+   "detail": "AM-024 Gate 1 established product/orientation evidence; AM-027 replaces the abandoned package path with five direct-asset gates. Replacement Gate 1 must reconcile the current navigation/tooling outputs before design or asset implementation resumes."
   }
  ],
  "kickoff": {
@@ -58,9 +58,10 @@
    },
    {
     "n": 3,
-    "title": "Asset packs \u2014 definition and implementation",
-    "state": "open",
-    "note": "P13.1 remains the generic lifecycle authority, but re-audit leaves four authoring blockers: RD-003 identity conflict, HG-007 entitlement binding, HG-008 exact visual-slot/manifest coverage, and HG-009 package composition/schema/artifact/repository handoff. AM-016 is deferred because its first draft duplicated themeId and packageId one-to-one without an authored purpose; it closes nothing until the package model determines whether two identities are needed."
+    "title": "Launch presentation and direct asset management",
+    "state": "done",
+    "date": "2026-08-23",
+    "note": "AM-027 removes launch Theme/Asset Package mechanics, establishes one game-owned baseline, defines the exact v2/external-assets request\u2192record\u2192lock\u2192sync\u2192publish\u2192verify lifecycle, and replaces AM-024 package Gates 2\u20136 with five direct-asset implementation gates."
    },
    {
     "n": 4,
@@ -81,7 +82,7 @@
     "title": "Brief Claude Design on the platform authority",
     "state": "waiting",
     "awaiting": "a reachable design project",
-    "note": "Brief written 2026-08-21: Docs/design-brief-platform-authority.md, every claim cited. The audit cannot run -- DesignSync list_projects still returns empty, and it only lists writable design-system projects, so GUI work in an ordinary claude.ai Project would never appear. The owner has to say which of the three cases applies."
+    "note": "The original brief predates AM-027 and must be regenerated for 58 nodes, one baseline, direct Asset/Usage IDs, and the new vertical slice during Replacement Gate 4. Design-system project connectivity remains an operator prerequisite."
    }
   ]
  },
@@ -620,8 +621,8 @@
     "title": "The P13 package manifest cannot represent the theme identity P11 and P12 require",
     "kind": "defect",
     "source": "Docs/agile/contract-defects.md",
-    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-024 approves the final `packageId`-only conflict reading, exact five-row migration artifact, API/save/source/tooling dispositions, and closure gates. Migration Gate 1 is mechanically complete and locks the current identity/platform/navigation authority. Closure still requires Migration Gates 2\u20134 and the contracted zero-`themeId` manifest/API/save/fixture evidence.",
-    "open": true
+    "status": "RESOLVED BY SCOPE REMOVAL 2026-08-23 \u2014 AM-027 removes launch Theme/Asset Package identity, manifests, selection, persistence, and migration. Neither `themeId` nor `packageId` is a current presentation identity, so the conflicting representation is not implemented.",
+    "open": false
    },
    {
     "id": "HG-001",
@@ -668,7 +669,7 @@
     "title": "P13.1 requires a Bubble Bath fixture that no longer has a subject",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "RESOLVED 2026-08-21 \u2014 [AM-009](../amendments/AM-009-classic-reference-package.md)",
+    "status": "RESOLVED BY SCOPE REMOVAL 2026-08-23 \u2014 AM-027 removes the launch Asset Package pipeline and any required reference-package fixture; Bubble Bath remains obsolete, and AM-009's Classic package replacement is historical only.",
     "open": false
    },
    {
@@ -676,7 +677,7 @@
     "title": "Four launch packages have no authored entitlement identity",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "RESOLVED 2026-08-23 \u2014 AM-019 authors all five launch package identities, the four missing commercial entitlement IDs, their exact product grants, and each package manifest's entitlement requirement.",
+    "status": "RESOLVED BY SCOPE REMOVAL 2026-08-23 \u2014 AM-027 withdraws the five launch Theme/package identities and their package-only commercial grants from launch, so no package entitlement identity is required. Non-Theme Supporter/platform benefits remain separately authoritative.",
     "open": false
    },
    {
@@ -684,28 +685,36 @@
     "title": "No exact visual-slot catalog can produce the five launch package manifests",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-020 approves the exact catalog matrices and five skeleton requirements; AM-024 reconciles them to the 64-node set and makes their reproducible emission Migration Gate 2. The contracted source, flat catalog fingerprint, and five skeleton artifacts remain absent and required for closure.",
-    "open": true
+    "status": "RESOLVED BY SCOPE REMOVAL 2026-08-23 \u2014 AM-027 removes the launch five-package catalog/skeleton/coverage requirement. One game-owned presentation is complete against concrete approved Usage IDs through the direct asset registry and single-baseline QA.",
+    "open": false
    },
    {
     "id": "HG-009",
     "title": "Asset-package composition and artifact implementation are not authored",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "PARTIALLY RESOLVED 2026-08-23 \u2014 AM-017 through AM-023 approve the complete product, representation, identity, catalog, lifecycle, Player Experience, navigation, and collaboration model; AM-024 approves the final naming, landscape, 64-node, `packageId`, source/API/save/tooling reconciliation and six implementation gates. Contract authoring is complete, and Migration Gate 1 now has locked product/platform/navigation outputs, repository-wide authority inventory, verification, and rollback evidence. Gates 2\u20136\u2014generated catalogs/packages/API and save schemas, migration execution, distribution tooling, presentation tooling, Unity scaffolding, Claude Design handoff, and the verified five-Theme vertical slice\u2014remain downstream implementation.",
-    "open": true
+    "status": "RESOLVED BY SCOPE REMOVAL 2026-08-23 \u2014 AM-027 retires launch Asset Package/Theme mechanics, retains one game-owned presentation, preserves the useful AM-023 collaboration workflow, and replaces AM-024 package Gates 2\u20136 with five direct-asset-management gates. Package composition/artifact implementation is no longer required.",
+    "open": false
    },
    {
     "id": "HG-010",
     "title": "Gate 2 catalog metadata and strict package-source shapes are incomplete",
     "kind": "how-gap",
     "source": "Docs/agile/contract-how-gaps.md",
-    "status": "PARTIALLY AUTHORITY RESOLVED 2026-08-23 \u2014 AM-025 supplies machine shapes, derivation rules, source-skeleton state, and Classic disposition, but compiler audit found per-role compatibility-profile winners and Rune-drop inclusion/count still unauthored; AM-026 is proposed, and mechanical closure remains Gate 2 evidence",
+    "status": "CLOSED \u2014 DIRECTION ABANDONED 2026-08-23 \u2014 CRATE rejected AM-026, and approved AM-027 replaces the package catalog/coverage direction with single-presentation direct asset management. AM-025/AM-026 catalog executability is not a closure target.",
+    "open": false
+   },
+   {
+    "id": "HG-011",
+    "title": "Single-baseline asset-repository integration and lifecycle are not authored",
+    "kind": "how-gap",
+    "source": "Docs/agile/contract-how-gaps.md",
+    "status": "AUTHORITY RESOLVED 2026-08-23 \u2014 AM-027 approves exact repository ownership, asset/request identities and records, paths, commit/digest locks, rights, lifecycle states, deterministic tooling, Unity publication, QA, rollback, and five replacement implementation gates; mechanical closure requires Gates 1\u20135",
     "open": true
    }
   ],
-  "openFindings": 4,
-  "kickoffDone": 4,
+  "openFindings": 1,
+  "kickoffDone": 5,
   "kickoffTotal": 6
  }
 }
