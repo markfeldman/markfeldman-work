@@ -11,6 +11,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://markfeldman.work/foundry",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://markfeldman.work/how-i-built-this",
       lastModified: new Date(),
       changeFrequency: "monthly",

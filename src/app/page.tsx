@@ -141,8 +141,9 @@ export default function Home() {
             Current projects
           </h2>
           <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            Two builds running now. One is about what agents are allowed to do;
-            the other is about what happens when they are forbidden to guess.
+            Foundry is the operating layer I am building for repeatable,
+            governed AI work. Cerberus is the large contract-driven build that
+            keeps pressure-testing how agents behave when invention is forbidden.
           </p>
         </Reveal>
 
@@ -152,69 +153,58 @@ export default function Home() {
               In progress
             </span>
             <h3 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
-              Atlas — a governance layer for multi-agent work
+              Foundry — the operating layer for dependable AI work
             </h3>
           </div>
           <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            The problem I keep hitting: agents will happily do consequential
-            things nobody authorized. Atlas is my answer — a decision layer
-            where a human director authorizes, an executive agent plans and
-            routes, domain-specialized advisors are consulted on genuinely
-            hard calls, and bounded operational agents execute only what was
-            actually approved.
+            General agents can reason, code, and use tools. Foundry makes a
+            repeated job survive the chat window: the work is versioned,
+            context is traceable, progress is checkpointed, authority is
+            explicit, and consequential outcomes still stop at a human gate.
           </p>
           <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            The implementation is still private, but the design documentation
-            is public — the architecture decisions, the phased plan with each
-            gate&apos;s honest status, the risk register including what&apos;s
-            still open, and every normative requirement mapped to a test.
-            You don&apos;t have to take any of the below on faith.
+            Five chapters are implemented through durable workflows. Chapter
+            5 is active: turning a proven repository-inspection procedure into
+            a reusable Skill that carries instructions without carrying data,
+            credentials, or authority with it.
           </p>
           <a
-            href="https://github.com/markfeldman/atlas-docs"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/foundry"
             className="w-fit rounded-full border border-[#2a78d6]/40 bg-[#2a78d6]/10 px-5 py-2.5 text-base font-medium text-[#1c5cab] transition-all hover:-translate-y-0.5 hover:border-[#2a78d6] hover:shadow-lg hover:shadow-[#2a78d6]/15 dark:text-[#86b6ef]"
           >
-            Read the design docs on GitHub →
+            Explore the Foundry concept and build →
           </a>
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
               <h4 className="font-medium text-black dark:text-zinc-50">
-                Enforcement is structural, not prompt-based
+                Judgment moves. Authority does not.
               </h4>
               <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                Advisor agents can&apos;t write code because they&apos;re
-                dispatched into a task shape that has no branch, push, or
-                merge path at all — the boundary holds regardless of what any
-                prompt says. Authorization fails closed: expired, revoked, or
-                scope-changed approvals are rejected deterministically rather
-                than interpreted generously.
+                Deterministic software keeps the books, AI handles bounded
+                judgment, and a model cannot approve its own consequential
+                result. Permission is a validated contract, not reassuring
+                prose in a prompt.
               </p>
             </div>
             <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
               <h4 className="font-medium text-black dark:text-zinc-50">
-                I cut half of it mid-build
+                It is designed to outlive a provider
               </h4>
               <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                The original design had Atlas building its own agent dispatch
-                and supervision layer. Partway in, it was clear that
-                duplicated an existing tool that already did it well. I
-                scrapped that half and narrowed Atlas to the decision layer
-                it should have been — recorded as an architecture decision
-                record with the reasoning, not a silent rewrite.
+                Hosted and local models sit behind one inference boundary.
+                Workflows, approvals, evidence, budgets, and run history stay
+                with Foundry instead of disappearing when the model changes.
               </p>
             </div>
             <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
               <h4 className="font-medium text-black dark:text-zinc-50">
-                761 passing tests, and one honest gap
+                151 tests, 149 subtests, and a stricter red gate
               </h4>
               <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                Eight phases built and reviewed. A platform dependency blocks
-                real end-to-end dispatch verification on Windows, so that
-                gate is documented as partially met with the reason — not
-                rounded up to green. A governance system that overstates its
-                own conformance would be self-defeating.
+                The current working tree passes the full suite. A recent
+                Steward run also proved that safe execution was not enough:
+                its answer quality failed. The evaluation now separates those
+                claims, and a fresh end-to-end quality proof remains open.
               </p>
             </div>
           </div>
@@ -290,6 +280,37 @@ export default function Home() {
               </p>
             </div>
           </div>
+        </Reveal>
+
+        <Reveal className="flex flex-col gap-6 border-t border-zinc-200 pt-10 dark:border-zinc-800">
+          <div className="flex flex-col gap-2">
+            <span className="w-fit rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1 font-mono text-xs tracking-wide text-zinc-600 uppercase dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400">
+              Earlier project · maintained
+            </span>
+            <h3 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
+              Atlas — a governance layer for multi-agent work
+            </h3>
+          </div>
+          <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            Atlas explored authorization and decision structure for teams of
+            agents: a human director authorizes, an executive agent plans,
+            specialized advisors inform hard calls, and bounded operators act.
+            Its most important lesson now feeds Foundry: enforcement belongs in
+            task shape and validated state, not in prompt language alone.
+          </p>
+          <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
+            The implementation remains private. The public record includes the
+            architecture decisions, phased plan, risk register, and the gaps
+            that were deliberately left visible.
+          </p>
+          <a
+            href="https://github.com/markfeldman/atlas-docs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-fit text-base font-medium text-[#2a78d6] underline decoration-[#2a78d6]/40 underline-offset-4 transition-colors hover:decoration-[#2a78d6] dark:text-[#6fa8e8]"
+          >
+            Read the Atlas design record →
+          </a>
         </Reveal>
 
         <Reveal className="flex flex-col gap-4">
