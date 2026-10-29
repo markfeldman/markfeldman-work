@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 // and emitted as a static file rather than rendered per request.
 export const dynamic = "force-static";
 
-export const alt = "Mark Feldman — Agentic Systems Engineer";
+export const alt = "Mark Feldman - Haunted Game Studio and MACK";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -45,7 +45,7 @@ export default function OpengraphImage() {
             lineHeight: 1.05,
           }}
         >
-          Agentic Systems Engineer
+          HGS + MACK
         </div>
         <div
           style={{
@@ -67,7 +67,7 @@ export default function OpengraphImage() {
             lineHeight: 1.4,
           }}
         >
-          Helping engineering teams evaluate, adopt, and build with agentic AI.
+          A working game studio and the agentic system being built behind it.
         </div>
       </div>
     ),

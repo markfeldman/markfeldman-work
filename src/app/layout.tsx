@@ -1,20 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const title = "Mark Feldman — Agentic Systems Engineer";
+const title = "Mark Feldman - Haunted Game Studio and MACK";
 const description =
-  "I build systems where AI agents do real engineering work under real constraints — multi-agent orchestration, authorization boundaries, and the review discipline that makes agent output safe to merge. 12+ years leading engineering teams behind it.";
+  "I am building Haunted Game Studio and MACK: a working game studio and the agentic control plane designed to make its specialist teams repeatable, reviewable, and safe to direct.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://markfeldman.work"),
@@ -41,10 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className="h-full antialiased">
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );

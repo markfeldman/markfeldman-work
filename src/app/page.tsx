@@ -3,414 +3,138 @@ import LiveRepoActivity from "@/components/LiveRepoActivity";
 import LiveWorkflowStatus from "@/components/LiveWorkflowStatus";
 import Reveal from "@/components/Reveal";
 
+const workflow = ["Inception", "Proof", "Development", "Launch", "Post-launch"];
+
 const practices = [
-  {
-    title: "Parallel dispatch, isolated worktrees",
-    description:
-      "I run multiple agents concurrently, each in its own git worktree, so simultaneous work can't collide. Branches come back one at a time to be reviewed and merged deliberately.",
-  },
-  {
-    title: "Every agent branch gets read before it lands",
-    description:
-      "Not spot-checked — read. On my current project that caught an unvalidated shell interpolation in agent-written dispatch code: a real injection vector, fixed before merge. Agents produce plausible code; plausible is not the same as correct.",
-  },
-  {
-    title: "Model tier matched to stakes",
-    description:
-      "Cheaper, faster models for mechanical subtasks; stronger ones where judgment actually decides the outcome. Cost control that doesn't quietly degrade the work that matters.",
-  },
-  {
-    title: "Hard human-only boundaries",
-    description:
-      "Credentials, live domains, and real spend stay with me. When an agent hits an authentication wall, the right behavior is to hand it back — not to route around it. That boundary is a design decision, not an accident.",
-  },
-  {
-    title: "\"Done\" requires evidence",
-    description:
-      "A dependency once blocked real end-to-end verification on my governance project. That shipped as a documented known limitation rather than a passing gate. Adoption fails fastest when a system is trusted past what it has actually proven.",
-  },
+  { number: "01", title: "Parallel work, isolated branches", description: "Agents work concurrently in separate worktrees. Their branches return one at a time for deliberate review and merge." },
+  { number: "02", title: "Human-only authority", description: "Credentials, production accounts, live domains, and real spend stop with me. That boundary is part of the architecture." },
+  { number: "03", title: "Evidence closes the loop", description: "A passing-looking result is not enough. I read the diff, run the checks, inspect the output, and keep failed gates visible." },
 ];
 
 const stats = [
-  {
-    figure: "6 months",
-    label: "Ad hoc delivery → predictable Scrum",
-    detail:
-      "Two teams inside a 20-person cross-functional org, moved from non-trackable work to a steady cadence.",
-  },
-  {
-    figure: "14 / ~50",
-    label: "Direct reports at peak / managed overall",
-    detail:
-      "Across two international teams; personally hired 20+ engineers and owned the full employee lifecycle.",
-  },
-  {
-    figure: "~$1M",
-    label: "Recurring annual licensing eliminated",
-    detail:
-      "Architected and built an enterprise HL7 integration platform that replaced CorePoint across all clients.",
-  },
+  { figure: "6 months", label: "Ad hoc delivery to predictable Scrum", detail: "Two teams inside a 20-person cross-functional organization, moved from non-trackable work to a steady cadence." },
+  { figure: "14 / ~50", label: "Direct reports at peak / managed overall", detail: "Across two international teams; personally hired 20+ engineers and owned the full employee lifecycle." },
+  { figure: "~$1M", label: "Recurring annual licensing eliminated", detail: "Architected and built an enterprise HL7 integration platform that replaced CorePoint across all clients." },
 ];
 
 const experience = [
-  {
-    role: "Senior Development Manager",
-    org: "Dental Intelligence",
-    period: "2024 – 2026",
-  },
-  {
-    role: "Software Engineer II",
-    org: "Melaleuca",
-    period: "2023 – 2024",
-  },
-  {
-    role: "Software Development Manager",
-    org: "Martin Garage Door",
-    period: "2022 – 2023",
-  },
-  {
-    role: "Software Development Manager",
-    org: "ChartLogic / Medsphere",
-    period: "2015 – 2022",
-  },
-  {
-    role: "Senior Software Engineer",
-    org: "Echopass / Genesys",
-    period: "2014 – 2015",
-  },
+  ["Senior Development Manager", "Dental Intelligence", "2024 - 2026"],
+  ["Software Engineer II", "Melaleuca", "2023 - 2024"],
+  ["Software Development Manager", "Martin Garage Door", "2022 - 2023"],
+  ["Software Development Manager", "ChartLogic / Medsphere", "2015 - 2022"],
+  ["Senior Software Engineer", "Echopass / Genesys", "2014 - 2015"],
 ];
+
+function Arrow() {
+  return <span aria-hidden="true">&rarr;</span>;
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col font-sans">
-      <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-24 px-6 py-24 sm:px-8">
-        <Reveal className="flex flex-col gap-4">
-          <p className="font-mono text-sm font-medium tracking-wide text-zinc-500 uppercase dark:text-zinc-400">
-            Mark Feldman
-            <span className="text-zinc-400 dark:text-zinc-600"> · </span>
-            Herriman, UT
-            <span className="text-zinc-400 dark:text-zinc-600"> · </span>
-            Remote
-          </p>
-          <h1 className="bg-gradient-to-br from-[#2a78d6] via-black to-black bg-clip-text text-5xl font-semibold tracking-tighter text-transparent sm:text-6xl dark:from-[#3987e5] dark:via-white dark:to-white">
-            Agentic Systems Engineer
-          </h1>
-          <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            I build systems where AI agents do real engineering work under
-            real constraints — multi-agent orchestration, permission and
-            authorization boundaries, and the review discipline that makes
-            agent output safe to merge.
-          </p>
-          <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            I&apos;m looking for a role helping a team adopt agentic AI. I
-            spent 12+ years leading engineering teams before this, and the
-            hard part was never the tool — it was getting an organization to
-            use a capable new thing well, and making the practice stick.
-          </p>
+    <div className="site-shell flex min-h-screen flex-col font-sans">
+      <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col gap-28 px-6 py-10 sm:px-8 sm:py-16 lg:px-10">
+        <Reveal className="hero-grid relative overflow-hidden rounded-[2rem] border border-black/5 bg-white/65 p-7 shadow-2xl shadow-[#2a78d6]/10 backdrop-blur-xl sm:p-10 lg:p-14 dark:border-white/10 dark:bg-black/35">
+          <div className="hero-orbit" aria-hidden="true" />
+          <div className="relative z-10 flex max-w-3xl flex-col gap-7">
+            <div className="flex flex-wrap items-center gap-3 font-mono text-xs font-medium tracking-[0.18em] text-zinc-500 uppercase dark:text-zinc-400">
+              <span>Mark Feldman</span><span className="h-px w-8 bg-[#2a78d6]" /><span>Herriman, UT</span><span>Remote</span>
+            </div>
+            <h1 className="max-w-4xl text-5xl leading-[0.95] font-semibold tracking-[-0.055em] text-black sm:text-7xl lg:text-8xl dark:text-white">
+              I&apos;m building a studio
+              <span className="block text-[#2a78d6] dark:text-[#6fa8e8]">and the system behind it.</span>
+            </h1>
+            <p className="max-w-2xl text-lg leading-8 text-zinc-600 sm:text-xl dark:text-zinc-300">
+              Haunted Game Studio is where the work ships. MACK is the control plane I&apos;m building to make a growing team of specialist agents repeatable, reviewable, and safe to direct.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a href="#headliners" className="rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#2a78d6]/20 dark:bg-white dark:text-black">See the work <Arrow /></a>
+              <a href="https://hauntingsoftware.com" target="_blank" rel="noopener noreferrer" className="rounded-full border border-[#2a78d6]/35 bg-[#2a78d6]/8 px-6 py-3 text-sm font-semibold text-[#1c5cab] transition-all hover:-translate-y-0.5 hover:border-[#2a78d6] dark:text-[#86b6ef]">Visit Haunted Game Studio <Arrow /></a>
+            </div>
+          </div>
+          <div className="relative z-10 mt-14 grid gap-3 border-t border-black/8 pt-6 sm:grid-cols-3 dark:border-white/10">
+            {[["HGS", "Products and player feedback"], ["MACK", "Direction and coordination"], ["MARK", "Judgment and authority"]].map(([label, detail]) => (
+              <div key={label} className="flex items-center gap-3"><span className="font-mono text-xs font-bold tracking-[0.2em] text-[#2a78d6] dark:text-[#6fa8e8]">{label}</span><span className="text-sm text-zinc-500 dark:text-zinc-400">{detail}</span></div>
+            ))}
+          </div>
         </Reveal>
+
+        <section id="headliners" className="flex scroll-mt-10 flex-col gap-6">
+          <Reveal className="flex items-end justify-between gap-6">
+            <div><p className="section-kicker">The headliners</p><h2 className="mt-3 max-w-3xl text-3xl font-semibold tracking-tight text-black sm:text-5xl dark:text-white">One makes the work real. The other makes it repeatable.</h2></div>
+            <span className="hidden font-mono text-7xl font-semibold tracking-[-0.08em] text-black/[0.035] lg:block dark:text-white/[0.045]">HGS/MACK</span>
+          </Reveal>
+          <div className="grid gap-6 lg:grid-cols-2">
+            <Reveal className="h-full">
+              <article className="feature-card studio-card flex h-full flex-col justify-between gap-12 overflow-hidden rounded-[2rem] border border-black/5 bg-white/70 p-7 backdrop-blur-xl sm:p-9 dark:border-white/10 dark:bg-white/5">
+                <div className="studio-sigil" aria-hidden="true"><span>HGS</span></div>
+                <div className="relative z-10 flex flex-col gap-5">
+                  <div><p className="section-kicker">Haunted Game Studio</p><h3 className="mt-3 text-3xl font-semibold tracking-tight text-black dark:text-white">A real studio, built in public where it counts.</h3></div>
+                  <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-300">I use a working game studio as the proving ground for agentic delivery: design, engineering, builds, testing, launch operations, audio, art, and the systems connecting them.</p>
+                  <div className="rounded-2xl border border-[#2a78d6]/25 bg-[#2a78d6]/8 p-5">
+                    <p className="font-mono text-xs font-semibold tracking-[0.16em] text-[#2a78d6] uppercase dark:text-[#6fa8e8]">Shipped</p>
+                    <p className="mt-2 text-xl font-semibold text-black dark:text-white">Mushrooms vs Skulls is live on Android.</p>
+                    <p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">Released under Haunted Game Studio, with iOS work still ahead. A product people can install is a stronger claim than a polished agent demo.</p>
+                  </div>
+                  <a href="https://hauntingsoftware.com" target="_blank" rel="noopener noreferrer" className="w-fit text-sm font-semibold text-[#2a78d6] underline decoration-[#2a78d6]/40 underline-offset-4 hover:decoration-[#2a78d6] dark:text-[#6fa8e8]">Enter the studio <Arrow /></a>
+                </div>
+              </article>
+            </Reveal>
+            <Reveal className="h-full">
+              <article className="feature-card blueprint-card flex h-full flex-col gap-8 rounded-[2rem] border border-black/5 bg-zinc-950 p-7 text-white shadow-2xl shadow-[#2a78d6]/10 sm:p-9 dark:border-white/10">
+                <div><p className="font-mono text-xs font-semibold tracking-[0.18em] text-[#6fa8e8] uppercase">MACK / in development</p><h3 className="mt-3 text-3xl font-semibold tracking-tight">Master Agent Control Kiosk</h3><p className="mt-4 text-lg leading-8 text-zinc-300">MACK is the studio control plane I&apos;m designing: one place to direct specialist agents, expose the state of a game, enforce handoffs, and keep the human Director in control.</p></div>
+                <div className="mack-console rounded-2xl border border-white/10 bg-black/35 p-5">
+                  <div className="mb-5 flex items-center justify-between font-mono text-[10px] tracking-[0.16em] text-zinc-500 uppercase"><span>Studio pipeline</span><span>Design target</span></div>
+                  <ol className="relative flex flex-col gap-3">
+                    {workflow.map((stage, index) => (<li key={stage} className="group flex items-center gap-4 rounded-xl border border-white/8 bg-white/[0.035] px-4 py-3"><span className="flex h-7 w-7 items-center justify-center rounded-full border border-[#3987e5]/50 font-mono text-[10px] text-[#6fa8e8]">{String(index + 1).padStart(2, "0")}</span><span className="text-sm font-medium">{stage}</span><span className="ml-auto h-1.5 w-1.5 rounded-full bg-[#3987e5] shadow-[0_0_12px_#3987e5]" /></li>))}
+                  </ol>
+                </div>
+                <p className="text-sm leading-6 text-zinc-400">This is the system being built, not a fake operations dashboard. The studio&apos;s current agents and tools exist; MACK is the layer intended to coordinate them.</p>
+              </article>
+            </Reveal>
+          </div>
+        </section>
 
         <Reveal className="flex flex-col gap-8">
-          <div className="flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-              How I actually work with agents
-            </h2>
-            <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-              Most &ldquo;AI experience&rdquo; means prompting a chat window.
-              This is the operating practice I run instead.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4">
-            {practices.map((practice) => (
-              <div
-                key={practice.title}
-                className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#2a78d6]/10 dark:border-white/10 dark:bg-white/5"
-              >
-                <h3 className="font-medium text-black dark:text-zinc-50">
-                  {practice.title}
-                </h3>
-                <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                  {practice.description}
-                </p>
-              </div>
-            ))}
+          <div><p className="section-kicker">Operating practice</p><h2 className="mt-3 text-3xl font-semibold tracking-tight text-black dark:text-white">The interesting part is not that the agents can code.</h2></div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {practices.map((practice) => (<article key={practice.number} className="feature-card rounded-2xl border border-black/5 bg-white/60 p-6 backdrop-blur-md dark:border-white/10 dark:bg-white/5"><span className="font-mono text-xs font-semibold text-[#2a78d6] dark:text-[#6fa8e8]">{practice.number}</span><h3 className="mt-6 text-lg font-semibold text-black dark:text-white">{practice.title}</h3><p className="mt-3 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{practice.description}</p></article>))}
           </div>
         </Reveal>
 
-        <Reveal className="flex flex-col gap-2">
-          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            Current projects
-          </h2>
-          <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            Foundry is the operating layer I am building for repeatable,
-            governed AI work. Cerberus is the large contract-driven build that
-            keeps pressure-testing how agents behave when invention is forbidden.
-          </p>
-        </Reveal>
+        <section className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <Reveal className="flex flex-col gap-5"><p className="section-kicker">Pressure test</p><h2 className="text-3xl font-semibold tracking-tight text-black dark:text-white">Perimeter-Cerberus made guessing visible.</h2><p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">A game built against 356 frozen design contracts. When a value was missing, the agents had to expose the gap instead of filling it with something plausible. Twenty-six sprints, a Windows build, an Android APK, and two registers of what the contracts got wrong.</p><Link href="/perimeter-cerberus" className="w-fit text-sm font-semibold text-[#2a78d6] underline decoration-[#2a78d6]/40 underline-offset-4 hover:decoration-[#2a78d6] dark:text-[#6fa8e8]">Inspect the engineering record <Arrow /></Link></Reveal>
+          <Reveal className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-2xl border border-black/5 bg-white/60 p-6 backdrop-blur-md dark:border-white/10 dark:bg-white/5"><p className="font-mono text-xs text-[#2a78d6] dark:text-[#6fa8e8]">1,569 tests</p><h3 className="mt-3 font-semibold text-black dark:text-white">The frozen v1 baseline passes.</h3><p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">CI runs the same suite on Linux, Windows, and macOS. It is a baseline for the next build, not a claim that the next build is done.</p></div>
+            <div className="rounded-2xl border border-black/5 bg-white/60 p-6 backdrop-blur-md dark:border-white/10 dark:bg-white/5"><p className="font-mono text-xs text-[#2a78d6] dark:text-[#6fa8e8]">2 / 18 gates</p><h3 className="mt-3 font-semibold text-black dark:text-white">Pending means pending.</h3><p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">The remaining release gates stay visible instead of being deferred out of sight to make the project look further along.</p></div>
+          </Reveal>
+        </section>
 
         <Reveal className="flex flex-col gap-6">
-          <div className="flex flex-col gap-2">
-            <span className="w-fit rounded-full border border-[#2a78d6]/30 bg-[#2a78d6]/10 px-3 py-1 font-mono text-xs tracking-wide text-[#1c5cab] uppercase dark:text-[#86b6ef]">
-              In progress
-            </span>
-            <h3 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
-              Foundry — the operating layer for dependable AI work
-            </h3>
-          </div>
-          <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            General agents can reason, code, and use tools. Foundry makes a
-            repeated job survive the chat window: the work is versioned,
-            context is traceable, progress is checkpointed, authority is
-            explicit, and consequential outcomes still stop at a human gate.
-          </p>
-          <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            Five chapters are implemented through durable workflows. Chapter
-            5 is active: turning a proven repository-inspection procedure into
-            a reusable Skill that carries instructions without carrying data,
-            credentials, or authority with it.
-          </p>
-          <a
-            href="/foundry"
-            className="w-fit rounded-full border border-[#2a78d6]/40 bg-[#2a78d6]/10 px-5 py-2.5 text-base font-medium text-[#1c5cab] transition-all hover:-translate-y-0.5 hover:border-[#2a78d6] hover:shadow-lg hover:shadow-[#2a78d6]/15 dark:text-[#86b6ef]"
-          >
-            Explore the Foundry concept and build →
-          </a>
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
-              <h4 className="font-medium text-black dark:text-zinc-50">
-                Judgment moves. Authority does not.
-              </h4>
-              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                Deterministic software keeps the books, AI handles bounded
-                judgment, and a model cannot approve its own consequential
-                result. Permission is a validated contract, not reassuring
-                prose in a prompt.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
-              <h4 className="font-medium text-black dark:text-zinc-50">
-                It is designed to outlive a provider
-              </h4>
-              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                Hosted and local models sit behind one inference boundary.
-                Workflows, approvals, evidence, budgets, and run history stay
-                with Foundry instead of disappearing when the model changes.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
-              <h4 className="font-medium text-black dark:text-zinc-50">
-                151 tests, 149 subtests, and a stricter red gate
-              </h4>
-              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                The current working tree passes the full suite. A recent
-                Steward run also proved that safe execution was not enough:
-                its answer quality failed. The evaluation now separates those
-                claims, and a fresh end-to-end quality proof remains open.
-              </p>
-            </div>
+          <div><p className="section-kicker">Evidence, now</p><h2 className="mt-3 text-3xl font-semibold tracking-tight text-black dark:text-white">This site proves its own claims.</h2><p className="mt-3 max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-400">These panels fetch this repository&apos;s public GitHub activity and CI runs at page-view time. They are live data, not captured screenshots.</p></div>
+          <div className="grid gap-4 lg:grid-cols-2"><LiveRepoActivity /><LiveWorkflowStatus /></div>
+          <Link href="/how-i-built-this" className="w-fit text-sm font-semibold text-[#2a78d6] underline decoration-[#2a78d6]/40 underline-offset-4 hover:decoration-[#2a78d6] dark:text-[#6fa8e8]">Read how this site was built <Arrow /></Link>
+        </Reveal>
+
+        <Reveal className="archive-strip rounded-2xl border border-dashed border-zinc-300/80 p-6 dark:border-zinc-700">
+          <div className="grid gap-6 lg:grid-cols-[0.8fr_1fr_1fr] lg:items-start">
+            <div><p className="font-mono text-xs font-medium tracking-[0.16em] text-zinc-500 uppercase">The archive</p><h2 className="mt-2 text-xl font-semibold text-black dark:text-white">The prototypes had names. The lessons stayed.</h2></div>
+            <div><h3 className="font-semibold text-black dark:text-white">Foundry</h3><p className="mt-2 text-sm leading-6 text-zinc-500 dark:text-zinc-400">An earlier operating-layer concept that clarified durable workflows, explicit authority, checkpoints, and provider boundaries.</p><Link href="/foundry" className="mt-3 inline-block text-sm text-zinc-600 underline underline-offset-4 dark:text-zinc-300">Open the old workshop <Arrow /></Link></div>
+            <div><h3 className="font-semibold text-black dark:text-white">Atlas</h3><p className="mt-2 text-sm leading-6 text-zinc-500 dark:text-zinc-400">The governance experiment that taught me enforcement belongs in task shape and validated state, not reassuring prompt language.</p><a href="https://github.com/markfeldman/atlas-docs" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-sm text-zinc-600 underline underline-offset-4 dark:text-zinc-300">Browse the design record <Arrow /></a></div>
           </div>
         </Reveal>
 
-        <Reveal className="flex flex-col gap-6">
-          <div className="flex flex-col gap-2">
-            <span className="w-fit rounded-full border border-[#2a78d6]/30 bg-[#2a78d6]/10 px-3 py-1 font-mono text-xs tracking-wide text-[#1c5cab] uppercase dark:text-[#86b6ef]">
-              In progress
-            </span>
-            <h3 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
-              Perimeter-Cerberus — agents under a frozen contract set
-            </h3>
-          </div>
-          <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            A game built against 356 design contracts that are the sole
-            authority: no gameplay value, ID, reward or UI state may be chosen
-            or inferred outside them. It is the closest thing I have to a
-            controlled experiment in what agents do when guessing is forbidden
-            — because every time one wanted to fill a gap, the gap got written
-            down instead.
-          </p>
-          <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            Twenty-six sprints, a shipped Windows build and Android APK, and
-            two registers of everything the contracts got wrong. The
-            implementation stays private — it is an unreleased game — but the
-            engineering record is published here.
-          </p>
-          <Link
-            href="/perimeter-cerberus"
-            className="w-fit rounded-full border border-[#2a78d6]/40 bg-[#2a78d6]/10 px-5 py-2.5 text-base font-medium text-[#1c5cab] transition-all hover:-translate-y-0.5 hover:border-[#2a78d6] hover:shadow-lg hover:shadow-[#2a78d6]/15 dark:text-[#86b6ef]"
-          >
-            Read the project roadmap →
-          </Link>
-          <div className="flex flex-col gap-4">
-            <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
-              <h4 className="font-medium text-black dark:text-zinc-50">
-                It refused to invent a value nobody wrote
-              </h4>
-              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                Career Rounds 1 through 3 set a minimum spawn separation of
-                20°, 18°, 16°. Rounds 4 and 5 state none. The obvious
-                continuation is 14 and 12, and that is exactly the problem —
-                it would put a spawn rule into the game under a citation that
-                never mentions one. The generator emits zero, prints a warning,
-                and the gap is filed as a defect awaiting an amendment.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
-              <h4 className="font-medium text-black dark:text-zinc-50">
-                A success that was silently wrong
-              </h4>
-              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                A generator&apos;s pattern matched letters followed by at least
-                one digit, so three letters-only skill keystones never matched
-                and never became nodes. Nothing failed. The output was
-                well-formed and 33 nodes is a perfectly plausible number. It
-                surfaced only because a second, independent reading of the same
-                contracts was cross-checked against the first — which is the
-                only reason anyone found it at all.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5">
-              <h4 className="font-medium text-black dark:text-zinc-50">
-                Two of eighteen release gates met
-              </h4>
-              <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-                The other sixteen are listed as pending rather than deferred
-                out of sight. At the frozen v1 tag, all 1,569 tests pass; CI
-                runs the same suite on Linux, Windows, and macOS. That is the
-                baseline the second build has to preserve, not a claim that v2
-                already exists.
-              </p>
-            </div>
-          </div>
+        <Reveal className="flex flex-col gap-8 border-t border-zinc-200 pt-10 dark:border-zinc-800">
+          <div><p className="section-kicker">The operator behind it</p><h2 className="mt-3 text-3xl font-semibold tracking-tight text-black dark:text-white">15+ years building software. 12+ leading the teams that ship it.</h2><p className="mt-3 max-w-3xl text-base leading-7 text-zinc-600 dark:text-zinc-400">My track record is walking into organizations with no durable engineering practice and installing one that lasts. Adopting agentic AI well is the same kind of organizational problem.</p></div>
+          <div className="grid gap-4 sm:grid-cols-3">{stats.map((stat) => (<article key={stat.label} className="rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md dark:border-white/10 dark:bg-white/5"><p className="text-2xl font-semibold tracking-tight text-[#2a78d6] dark:text-[#6fa8e8]">{stat.figure}</p><p className="mt-2 text-sm font-semibold text-black dark:text-white">{stat.label}</p><p className="mt-2 text-sm leading-6 text-zinc-600 dark:text-zinc-400">{stat.detail}</p></article>))}</div>
+          <ul>{experience.map(([role, org, period]) => (<li key={`${org}-${period}`} className="flex flex-col gap-1 border-b border-zinc-200 py-4 last:border-0 sm:flex-row sm:items-baseline sm:justify-between dark:border-zinc-800"><p><span className="font-medium text-black dark:text-white">{role}</span><span className="text-zinc-500"> / {org}</span></p><span className="font-mono text-sm text-zinc-500">{period}</span></li>))}</ul>
         </Reveal>
 
-        <Reveal className="flex flex-col gap-6 border-t border-zinc-200 pt-10 dark:border-zinc-800">
-          <div className="flex flex-col gap-2">
-            <span className="w-fit rounded-full border border-zinc-300 bg-zinc-100 px-3 py-1 font-mono text-xs tracking-wide text-zinc-600 uppercase dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400">
-              Earlier project · maintained
-            </span>
-            <h3 className="text-xl font-semibold tracking-tight text-black dark:text-zinc-50">
-              Atlas — a governance layer for multi-agent work
-            </h3>
-          </div>
-          <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            Atlas explored authorization and decision structure for teams of
-            agents: a human director authorizes, an executive agent plans,
-            specialized advisors inform hard calls, and bounded operators act.
-            Its most important lesson now feeds Foundry: enforcement belongs in
-            task shape and validated state, not in prompt language alone.
-          </p>
-          <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            The implementation remains private. The public record includes the
-            architecture decisions, phased plan, risk register, and the gaps
-            that were deliberately left visible.
-          </p>
-          <a
-            href="https://github.com/markfeldman/atlas-docs"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-fit text-base font-medium text-[#2a78d6] underline decoration-[#2a78d6]/40 underline-offset-4 transition-colors hover:decoration-[#2a78d6] dark:text-[#6fa8e8]"
-          >
-            Read the Atlas design record →
-          </a>
-        </Reveal>
-
-        <Reveal className="flex flex-col gap-4">
-          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            This site is a work sample too
-          </h2>
-          <p className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Built with Claude Code, not a template — real architecture
-            tradeoffs, real deployment friction, and real decisions about
-            what to delegate versus keep human-controlled. The panels below
-            are live from this repo&apos;s own GitHub API and CI, not
-            screenshots.
-          </p>
-          <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
-            <LiveRepoActivity />
-            <LiveWorkflowStatus />
-          </div>
-          <Link
-            href="/how-i-built-this"
-            className="w-fit text-base font-medium text-[#2a78d6] underline decoration-[#2a78d6]/40 underline-offset-4 transition-colors hover:decoration-[#2a78d6] dark:text-[#6fa8e8]"
-          >
-            Read how it was built →
-          </Link>
-        </Reveal>
-
-        <Reveal className="flex flex-col gap-8 border-t border-zinc-200 pt-8 dark:border-zinc-800">
-          <div className="flex flex-col gap-2">
-            <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-              The background this rests on
-            </h2>
-            <p className="max-w-xl text-base leading-7 text-zinc-600 dark:text-zinc-400">
-              15+ years in C#/.NET, 12+ leading the teams that ship it. My
-              track record is walking into organizations with no engineering
-              practice and installing one that lasts — which is the same
-              problem as adopting agentic AI well.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="flex flex-col gap-1.5 rounded-2xl border border-black/5 bg-white/60 p-5 backdrop-blur-md transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#2a78d6]/10 dark:border-white/10 dark:bg-white/5"
-              >
-                <span className="text-2xl font-semibold tracking-tight text-[#2a78d6] dark:text-[#6fa8e8]">
-                  {stat.figure}
-                </span>
-                <span className="text-sm font-medium text-black dark:text-zinc-50">
-                  {stat.label}
-                </span>
-                <span className="text-sm leading-6 text-zinc-600 dark:text-zinc-400">
-                  {stat.detail}
-                </span>
-              </div>
-            ))}
-          </div>
-          <ul className="flex flex-col">
-            {experience.map((job) => (
-              <li
-                key={`${job.org}-${job.period}`}
-                className="flex flex-col gap-0.5 border-b border-zinc-200 py-4 last:border-b-0 sm:flex-row sm:items-baseline sm:justify-between sm:gap-6 dark:border-zinc-800"
-              >
-                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-3">
-                  <span className="font-medium text-black dark:text-zinc-50">
-                    {job.role}
-                  </span>
-                  <span className="text-zinc-600 dark:text-zinc-400">
-                    {job.org}
-                  </span>
-                </div>
-                <span className="shrink-0 font-mono text-sm text-zinc-500 dark:text-zinc-500">
-                  {job.period}
-                </span>
-              </li>
-            ))}
-          </ul>
-          <p className="text-base leading-7 text-zinc-600 dark:text-zinc-400">
-            Enterprise SaaS, healthcare technology, and analytics — including
-            a multi-tenant EHR platform under HIPAA, SOC 2, and ONC
-            obligations.
-          </p>
-        </Reveal>
-
-        <Reveal className="flex flex-col gap-4 border-t border-zinc-200 pt-8 dark:border-zinc-800">
-          <h2 className="text-2xl font-semibold tracking-tight text-black dark:text-zinc-50">
-            Let&apos;s connect
-          </h2>
-          <a
-            href="https://www.linkedin.com/in/mark-feldman-61657151/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-fit rounded-full bg-black px-5 py-3 text-base font-medium text-white transition-all hover:-translate-y-0.5 hover:bg-zinc-800 hover:shadow-lg hover:shadow-[#2a78d6]/20 dark:bg-white dark:text-black dark:hover:bg-zinc-200"
-          >
-            Connect on LinkedIn
-          </a>
+        <Reveal className="cta-panel flex flex-col items-start justify-between gap-8 overflow-hidden rounded-[2rem] border border-[#2a78d6]/20 bg-[#2a78d6]/8 p-8 sm:flex-row sm:items-end sm:p-10">
+          <div><p className="section-kicker">What comes next</p><h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-black sm:text-4xl dark:text-white">I&apos;m looking for the team ready to make agentic work operational.</h2></div>
+          <a href="https://www.linkedin.com/in/mark-feldman-61657151/" target="_blank" rel="noopener noreferrer" className="shrink-0 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-[#2a78d6]/20 dark:bg-white dark:text-black">Connect on LinkedIn <Arrow /></a>
         </Reveal>
       </main>
-
-      <footer className="mx-auto w-full max-w-3xl px-6 pb-8 text-sm text-zinc-500 sm:px-8 dark:text-zinc-500">
-        © {new Date().getFullYear()} Mark Feldman
-      </footer>
+      <footer className="mx-auto w-full max-w-6xl px-6 pb-8 text-sm text-zinc-500 sm:px-8 lg:px-10">&copy; {new Date().getFullYear()} Mark Feldman</footer>
     </div>
   );
 }
